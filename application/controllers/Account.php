@@ -11,6 +11,7 @@ class Account extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        $this->load->helper('url');
         $this->load->model('DBModel');
         $this->DBModel->setTable('account');
     }
@@ -26,14 +27,6 @@ class Account extends CI_Controller
      * 其它字段见数据表*/
     function insertAcc()
     {
-        /***模拟数据***/
-        $_POST["account"] = '212121';
-        $_POST["account"] = 'rrr';
-        $_POST["password"] = md5('123456');
-        $_POST["contact"] = md5('1212');
-        $_POST["nickname"] = 'xixixhh';
-        /***模拟数据***/
-
         /*不允许用户名有重复的*/
         if ($this->DBModel->get(array(
             "account" => $_POST["account"],
@@ -70,15 +63,16 @@ class Account extends CI_Controller
     /*修改信息*/
     function updateAcc()
     {
-        $info = array(
-            "name" => $_POST["name"],
-            "sex" => $_POST["sex"],
-            "position" => $_POST["position"],
-            "subject" => $_POST["subject"],
-            "skill" => $_POST["skill"],
-            "room" => $_POST["room"]
+        /*需要修改的数据集合，需要包含account字段*/
+        $info = $_POST;
+        $where = array(
+            "account" => $_POST["account"]
         );
-        $this->DBModel->update($info);
+        /*如果修改了密码，将密码进行加密*/
+        if(array_key_exists('password',$_POST)){
+            $info['password'] = md5($_POST['password']);
+        }
+        echo $this->DBModel->update($info,$where);
     }
 
     /*获取用户*/
@@ -92,6 +86,6 @@ class Account extends CI_Controller
             "password" => md5($_POST['password'])
         );
         $res = $this->DBModel->get($where);
-        echo json_encode($res);
+        echo $res;
     }
 }
