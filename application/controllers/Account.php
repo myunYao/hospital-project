@@ -20,34 +20,56 @@ class Account extends CI_Controller
         echo '这是默认方法';
         $this->load->view('success');
     }
-    function insertAcc(){
-        /*$info = array(
+
+    /* 添加用户
+     * 至少4个字段"account" "password" "contact" "nickname"
+     * 其它字段见数据表*/
+    function insertAcc()
+    {
+        /***模拟数据***/
+        $_POST["account"] = '212121';
+        $_POST["account"] = 'rrr';
+        $_POST["password"] = md5('123456');
+        $_POST["contact"] = md5('1212');
+        $_POST["nickname"] = 'xixixhh';
+        /***模拟数据***/
+
+        /*不允许用户名有重复的*/
+        if ($this->DBModel->get(array(
             "account" => $_POST["account"],
-            "password" => $_POST["password"],
-            "contact" => $_POST["tel"],
-            "nickname" => $_POST["nickname"]
-        );*/
-        $info = array(
-            "account" => 'admin',
-            "password" => 'admin',
-            "contact" => '12346698521',
-            "nickname" => '神经病吧'
-        );
-        var_dump($_POST);
-        echo $this->DBModel->insert($info);
+        ))) {
+            echo '已经存在的用户';
+        } else {
+            $info = array(
+                "account" => $_POST["account"],
+                "password" => $_POST["password"],
+                "contact" => $_POST["contact"],
+                "nickname" => $_POST["nickname"]
+            );
+            $res = $this->DBModel->insert($_POST);
+            /*这里添加注册成功或失败跳转的页面*/
+            if ($res){
+                //$this->load->view('某某页面');
+            }else{
+                //$this->load->view('某某页面');
+            }
+        }
     }
-    function deleteDoc(){
-        $info = array(
-            "name" => $_POST["name"],
-            "sex" => $_POST["sex"],
-            "position" => $_POST["position"],
-            "subject" => $_POST["subject"],
-            "skill" => $_POST["skill"],
-            "room" => $_POST["room"]
+
+    /*删除信息*/
+    function deleteAcc()
+    {
+        /*根据账户名进行查找删除*/
+        $where = array(
+            "account" => $_POST["account"]
         );
-        $this->DBModel->delete($info);
+        echo '需要最高级权限';
+//        $this->DBModel->delete($where);
     }
-    function updateDoc(){
+
+    /*修改信息*/
+    function updateAcc()
+    {
         $info = array(
             "name" => $_POST["name"],
             "sex" => $_POST["sex"],
@@ -58,10 +80,16 @@ class Account extends CI_Controller
         );
         $this->DBModel->update($info);
     }
-    function getAcc(){
+
+    /*获取用户*/
+    function getAcc()
+    {
+        /* 数据请求用post
+         * 需要给出account和password*
+         * 返回账号信息全字段*/
         $where = array(
-            "account" => 'admin',
-            "password" => 'admin'
+            "account" => $_POST['account'],
+            "password" => md5($_POST['password'])
         );
         $res = $this->DBModel->get($where);
         echo json_encode($res);
