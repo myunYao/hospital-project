@@ -20,16 +20,21 @@ class Account extends CI_Controller
         echo '这是默认方法';
         $this->load->view('success');
     }
-    function insertDoc(){
+    function insertAcc(){
+        /*$info = array(
+            "account" => $_POST["account"],
+            "password" => $_POST["password"],
+            "contact" => $_POST["tel"],
+            "nickname" => $_POST["nickname"]
+        );*/
         $info = array(
-            "name" => $_POST["name"],
-            "sex" => $_POST["sex"],
-            "position" => $_POST["position"],
-            "subject" => $_POST["subject"],
-            "skill" => $_POST["skill"],
-            "room" => $_POST["room"]
+            "account" => 'admin',
+            "password" => 'admin',
+            "contact" => '12346698521',
+            "nickname" => '神经病吧'
         );
-        $this->DBModel->insert($info);
+        var_dump($_POST);
+        echo $this->DBModel->insert($info);
     }
     function deleteDoc(){
         $info = array(
@@ -53,7 +58,12 @@ class Account extends CI_Controller
         );
         $this->DBModel->update($info);
     }
-    function getDoc(){
-        $this->DBModel->get();
+    function getAcc(){
+        $where = array(
+            "account" => 'admin',
+            "password" => 'admin'
+        );
+        $res = $this->DBModel->get($where);
+        echo json_encode($res);
     }
 }
