@@ -17,8 +17,8 @@ class System extends CI_Controller
     }
     function index(){
         $data['res'] = $this->DBModel->get();
-//        var_dump($res);
         $this->load->view('system',$data);
+
     }
 
 }
