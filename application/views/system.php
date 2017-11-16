@@ -39,20 +39,22 @@
 							    <td height="35" align="center" valign="middle" bgcolor="#d1d1d1">科室位置</td>
 						  		</tr>
 <!--								需要获取的列表信息-->
-						  		 <tr>
-						  		   <td align="center" valign="middle" bgcolor="#FFFFFF" class="Pleft">1</td>
-								    <td align="center" valign="middle" bgcolor="#FFFFFF" class="Pleft">&nbsp;</td>
-								    <td align="center" valign="middle" bgcolor="#FFFFFF" class="Pleft">赵二麻</td>
-								    <td align="center" valign="middle" bgcolor="#FFFFFF" class="Pleft">男</td>
-								    <td align="center" valign="middle" bgcolor="#FFFFFF" class="Pleft">暂无详细信息</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#FFFFFF" class="Pleft">神经外科主任助理</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#FFFFFF">骨科</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#FFFFFF">擅长搞好医患关系，处理主任内务</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#FFFFFF">实习</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#FFFFFF">暂时没有照片</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#FFFFFF">科华北路99号201</td>
-								 </tr>
-
+								<?php
+								$imgBaseUrl = base_url()."img/";
+								foreach($res as $value){
+									$dc_id	 				=    	$value['dc_id'];
+									$name	 				=    	$value['name'];
+									$sex					=    	$value['sex'];
+									$introduction			=		$value['introduction'];
+									$position				=		$value['position'];
+									$subject				=		$value['subject'];
+									$skill					=		$value['skill'];
+									$experience				=		$value['experience'];
+									$head					=		$imgBaseUrl.$value['head'];
+									$room					=		$value['room'];
+								echo "<tr><td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$dc_id</td><td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>&nbsp;</td><td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$name</td><td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$sex</td><td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$introduction</td><td height='35' align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$position</td><td height='35' align='center' valign='middle' bgcolor='#FFFFFF'>$subject</td><td height='35' align='center' valign='middle' bgcolor='#FFFFFF'>$skill</td><td height='35' align='center' valign='middle' bgcolor='#FFFFFF'>$experience</td><td height='35' align='center' valign='middle' bgcolor='#FFFFFF'>$head</td><td height='35' align='center' valign='middle' bgcolor='#FFFFFF'>$room</td></tr>";
+								}
+									?>
 							</table>
 							<div class="page">
 								<ul>
