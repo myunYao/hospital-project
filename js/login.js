@@ -3,6 +3,7 @@ $(".submit").click(function(){
     var passwd = $(".passWord").val();
 
     $.ajax({
+        url:"",
 
     })
 })
