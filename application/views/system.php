@@ -24,6 +24,7 @@
 					<div class="content_box">
 						<div class="content_all">
 							<table width="95%" border="0" cellpadding="0" cellspacing="1" bgcolor="#999999">
+<!--								列表信息-->
 								<tr>
 								  <td align="center" valign="middle" bgcolor="#d1d1d1" >ID</td>
 						     	  <td align="center" valign="middle" bgcolor="#d1d1d1" >编号</td>
@@ -37,6 +38,7 @@
 							    <td height="35" align="center" valign="middle" bgcolor="#d1d1d1">照片</td>
 							    <td height="35" align="center" valign="middle" bgcolor="#d1d1d1">科室位置</td>
 						  		</tr>
+<!--								需要获取的列表信息-->
 						  		 <tr>
 						  		   <td align="center" valign="middle" bgcolor="#FFFFFF" class="Pleft">1</td>
 								    <td align="center" valign="middle" bgcolor="#FFFFFF" class="Pleft">&nbsp;</td>
