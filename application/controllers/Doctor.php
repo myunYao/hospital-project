@@ -66,5 +66,7 @@ class Doctor extends CI_Controller
     function getDoc(){
         $res = $this->DBModel->get(array('name'=>'赵二麻'));
         echo 'cb('.json_encode($res).')';
+        $this->load->view('system',$res);
+        var_dump($res);
     }
 }
