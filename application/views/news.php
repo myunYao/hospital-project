@@ -69,6 +69,7 @@
 				   data-slide="next">&rsaquo;</a>
 			</div>
 		</div>
+<!--		右侧栏开始-->
 		<div class="col-md-4" style="padding-top:30px;font-size: 18px;">
 			<ul>
 				<li><a href="#"></a></li>
@@ -79,11 +80,13 @@
 				<li>aknahrvnehnjgfjnkcm</li>
 			</ul>
 		</div>
+<!--		右侧栏结束-->
 	</div>
+<!--	下边栏开始-->
 	<div class="row">
-		<div class="col-md-8 col-md-offset-1" style="padding-top:20px;">
+		<div class="col-md-8 col-md-offset-1">
 			<ul>
-				<li>aknahrvnehnjgfjnkcm</li>
+				<li>11111111111111</li>
 				<li>aknahrvnehnjgfjnkcm</li>
 				<li>aknahrvnehnjgfjnkcm</li>
 				<li>aknahrvnehnjgfjnkcm</li>
@@ -92,6 +95,8 @@
 			</ul>
 		</div>
 	</div>
+<!--	下边栏结束-->
+<!--footer start	-->
 	<div class="row" id="footer">
 		<div class="col-md-10 col-md-offset-2">
 			<ul >
@@ -112,6 +117,7 @@
 
 		</div>
 	</div>
+<!--footer end	-->
 </div>
 </body>
 </html>
