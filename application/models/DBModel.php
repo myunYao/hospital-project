@@ -6,6 +6,7 @@
  * Time: 16:23
  */
 
+/*可用$this->db->last_query();对最后一次SQL语句进行查看*/
 class DBModel extends CI_Model
 {
     function __construct()
@@ -32,12 +33,10 @@ class DBModel extends CI_Model
             ->from($this->table)
             ->where($where)
             ->get();
-//        echo $this->db->last_query();
-//        var_dump($result->result_array()) ;
         return $result->result_array();
     }
 
-    /*修改信息*/
+    /*修改信息，info为修改的字段名-值*/
     function update($info, $where='1=1')
     {
         $query = $this->db->update($this->table, $info, $where);
