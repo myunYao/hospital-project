@@ -27,7 +27,7 @@ class Doctor extends CI_Controller
             "room" => '201'
         );
 //        $this->DBModel->insert($info);
-        echo '这是默认方法';
+        echo '这是默认方法,你应该在后面加上路由';
     }
 
     function insertDoc(){
@@ -42,15 +42,12 @@ class Doctor extends CI_Controller
         $this->DBModel->insert($info);
     }
     function deleteDoc(){
-        $info = array(
+        $where = array(
             "name" => $_POST["name"],
-            "sex" => $_POST["sex"],
             "position" => $_POST["position"],
-            "subject" => $_POST["subject"],
-            "skill" => $_POST["skill"],
             "room" => $_POST["room"]
         );
-        $this->DBModel->delete($info);
+        $this->DBModel->delete($where);
     }
     function updateDoc(){
         $info = array(

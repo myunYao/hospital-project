@@ -12,9 +12,13 @@ class System extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
+        $this->load->model('DBModel');
+        $this->DBModel->setTable('dc_info');
     }
     function index(){
-        $this->load->view('system');
+        $data['res'] = $this->DBModel->get();
+//        var_dump($res);
+        $this->load->view('system',$data);
     }
 
 }

@@ -26,7 +26,7 @@ class DBModel extends CI_Model
     }
 
     /*查询数据*/
-    function get($where)
+    function get($where='1=1')
     {
         $result = $this->db->select('*')
             ->from($this->table)
