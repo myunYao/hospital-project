@@ -38,14 +38,14 @@ class DBModel extends CI_Model
     }
 
     /*修改信息*/
-    function update($info, $where)
+    function update($info, $where='1=1')
     {
         $query = $this->db->update($this->table, $info, $where);
         return $query;
     }
 
     /* 删除信息*/
-    function delete($where)
+    function delete($where='1=1')
     {
         $query = $this->db->delete($this->table, $where);
         return $query;
