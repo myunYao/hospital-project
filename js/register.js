@@ -1,27 +1,35 @@
 $(function(){
 
     $("#s_passwd").blur(function(){
-        alert("111");
-       /* var password = $("#passwd").val();
+       // alert("111");
+        var password = $("#passwd").val();
         var s_password=$("#s_passwd").val();
         if(password!=s_password){
             alert("请输入相同的密码");
+            $("#s_passwd").val("");
             return;
-        }*/
+        }
+    })
+    $("#account").blur(function(){
+        // alert("111");
+        var account = $("#account").val();
+        if(!(/^1[34578]\d{9}$/.test(account))) {
+            alert("手机号码格式错误，请重填");
+            $("#account").val("");
+            return;
+        }
     })
     $("#register").click(function(){
         var nickname = $("#nickname").val();
-        var account = $("#account").val
+        var account = $("#account").val();
         var password = $("#passwd").val();
         var s_password=$("#s_passwd").val();
         var url= regUrl;
-        if(!nickname){}
+        if(!nickname){
             alert("请输入昵称");
+        }
         if(!account){
             alert("请输入账号");
-        }
-        if(!(/^1[345678]\d{9}$/.test(account))) {
-            alert("手机号码有误，请重填");
         }
         if(!password){
             alert("请输入密码");
@@ -39,13 +47,13 @@ $(function(){
             },
             success: function (msg) {  //处理正确时的信息
                 console.log(msg);
-                if(msg["degree"]=="normol"){
+                /*if(msg["degree"]=="normol"){
                     //通过控制器跳转界面
                     window.location.href=swiftUrl;
                 }
                 else{
                     window.location.href=indexUrl;
-                }
+                }*/
             }
         })
     });
