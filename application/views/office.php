@@ -53,111 +53,45 @@
 							
 								<div class="content_wrap">
 								<table width="100%" border="0" cellspacing="0" cellpadding="0">
-								<tr>
-						     	<td height="35" align="left" valign="middle" bgcolor="#d1d1d1" class="Pleft">标题</td>
-							    <td height="35" align="center" valign="middle" bgcolor="#d1d1d1">收件人</td>
-							    <td height="35" align="center" valign="middle" bgcolor="#d1d1d1">重要性</td>
-							    <td height="35" align="center" valign="middle" bgcolor="#d1d1d1">回执</td>
-							    <td height="35" align="center" valign="middle" bgcolor="#d1d1d1">发送时间</td>
-							    <td height="35" align="center" valign="middle" bgcolor="#d1d1d1">操作</td>
-						  		</tr>
-						  		 <tr>
-								    <td height="35" align="left" valign="middle" class="Pleft">jquery树形菜单特效 插件_模板无忧</td>
-								    <td height="35" align="center" valign="middle">zm592565</td>
-								    <td height="35" align="center" valign="middle">一般</td>
-								    <td height="35" align="center" valign="middle">否</td>
-								    <td height="35" align="center" valign="middle">2014-09-18</td>
-								    <td height="35" align="center" valign="middle"><a href="#">删除</a>|<a href="#">收藏</a></td>
-								  </tr>
-								  <tr>
-								    <td height="35" align="left" valign="middle" bgcolor="#e7e7e7" class="Pleft">标题</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">收件人</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">重要性</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">回执</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">发送时间</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7"><a href="#">删除</a>|<a href="#">收藏</a></td>
-								  </tr>
-								  <tr>
-								    <td height="35" align="left" valign="middle" class="Pleft">jquery树形菜单特效 插件_模板无忧</td>
-								    <td height="35" align="center" valign="middle">zm592565</td>
-								    <td height="35" align="center" valign="middle">一般</td>
-								    <td height="35" align="center" valign="middle">否</td>
-								    <td height="35" align="center" valign="middle">2014-09-18</td>
-								    <td height="35" align="center" valign="middle"><a href="#">删除</a>|<a href="#">收藏</a></td>
-								  </tr>
-								  <tr>
-								    <td height="35" align="left" valign="middle" bgcolor="#e7e7e7" class="Pleft">标题</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">收件人</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">重要性</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">回执</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">发送时间</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7"><a href="#">删除</a>|<a href="#">收藏</a></td>
-								  </tr>
-								  <tr>
-								    <td height="35" align="left" valign="middle" class="Pleft">jquery树形菜单特效 插件_模板无忧</td>
-								    <td height="35" align="center" valign="middle">zm592565</td>
-								    <td height="35" align="center" valign="middle">一般</td>
-								    <td height="35" align="center" valign="middle">否</td>
-								    <td height="35" align="center" valign="middle">2014-09-18</td>
-								    <td height="35" align="center" valign="middle"><a href="#">删除</a>|<a href="#">收藏</a></td>
-								  </tr>
-								  <tr>
-								    <td height="35" align="left" valign="middle" bgcolor="#e7e7e7" class="Pleft">标题</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">收件人</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">重要性</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">回执</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">发送时间</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7"><a href="#">删除</a>|<a href="#">收藏</a></td>
-								  </tr>
-								  <tr>
-								    <td height="35" align="left" valign="middle" class="Pleft">jquery树形菜单特效 插件_模板无忧</td>
-								    <td height="35" align="center" valign="middle">zm592565</td>
-								    <td height="35" align="center" valign="middle">一般</td>
-								    <td height="35" align="center" valign="middle">否</td>
-								    <td height="35" align="center" valign="middle">2014-09-18</td>
-								    <td height="35" align="center" valign="middle"><a href="#">删除</a>|<a href="#">收藏</a></td>
-								  </tr>
-								  <tr>
-								    <td height="35" align="left" valign="middle" bgcolor="#e7e7e7" class="Pleft">标题</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">收件人</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">重要性</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">回执</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">发送时间</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7"><a href="#">删除</a>|<a href="#">收藏</a></td>
-								  </tr>
-								  <tr>
-								    <td height="35" align="left" valign="middle" class="Pleft">jquery树形菜单特效 插件_模板无忧</td>
-								    <td height="35" align="center" valign="middle">zm592565</td>
-								    <td height="35" align="center" valign="middle">一般</td>
-								    <td height="35" align="center" valign="middle">否</td>
-								    <td height="35" align="center" valign="middle">2014-09-18</td>
-								    <td height="35" align="center" valign="middle"><a href="#">删除</a>|<a href="#">收藏</a></td>
-								  </tr>
-								  <tr>
-								    <td height="35" align="left" valign="middle" bgcolor="#e7e7e7" class="Pleft">标题</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">收件人</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">重要性</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">回执</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">发送时间</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7"><a href="#">删除</a>|<a href="#">收藏</a></td>
-								  </tr>
-								  <tr>
-								    <td height="35" align="left" valign="middle" class="Pleft">jquery树形菜单特效 插件_模板无忧</td>
-								    <td height="35" align="center" valign="middle">zm592565</td>
-								    <td height="35" align="center" valign="middle">一般</td>
-								    <td height="35" align="center" valign="middle">否</td>
-								    <td height="35" align="center" valign="middle">2014-09-18</td>
-								    <td height="35" align="center" valign="middle"><a href="#">删除</a>|<a href="#">收藏</a></td>
-								  </tr>
-								  <tr>
-								    <td height="35" align="left" valign="middle" bgcolor="#e7e7e7" class="Pleft">标题</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">收件人</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">重要性</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">回执</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7">发送时间</td>
-								    <td height="35" align="center" valign="middle" bgcolor="#e7e7e7"><a href="#">删除</a>|<a href="#">收藏</a></td>
-								  </tr>
-							</table>
+									<tr>
+										<td align="center" valign="middle" bgcolor="#d1d1d1" >ID</td>
+										<td align="center" valign="middle" bgcolor="#d1d1d1">医生名字</td>
+										<td align="center" valign="middle" bgcolor="#d1d1d1">性别</td>
+										<td align="center" valign="middle" bgcolor="#d1d1d1">医生介绍</td>
+										<td height="35" align="center" valign="middle" bgcolor="#d1d1d1">医生职位</td>
+										<td height="35" align="center" valign="middle" bgcolor="#d1d1d1">医生所属科目</td>
+										<td height="35" align="center" valign="middle" bgcolor="#d1d1d1">擅长方面</td>
+										<td height="35" align="center" valign="middle" bgcolor="#d1d1d1">工作经验</td>
+										<td height="35" align="center" valign="middle" bgcolor="#d1d1d1">科室位置</td>
+										<td height="35" align="center" valign="middle" bgcolor="#d1d1d1">设置</td>
+									</tr>
+									<?php
+									foreach($res as $value) {
+										$dc_id = $value['dc_id'];
+										$name = $value['name'];
+										$sex = $value['sex'];
+										$introduction = $value['introduction'];
+										$position = $value['position'];
+										$subject = $value['subject'];
+										$skill = $value['skill'];
+										$experience = $value['experience'];
+										$room = $value['room'];
+										echo "<tr>
+										<td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$dc_id</td>
+										<td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$name</td>
+										<td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$sex</td>
+										<td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$introduction</td>
+										<td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft''>$position</td>
+										<td height='35' align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$subject</td>
+										<td height='35' align='center' valign='middle' bgcolor='#FFFFFF'>$skill</td>
+										<td height='35' align='center' valign='middle' bgcolor='#FFFFFF'>$experience</td>
+										<td height='35' align='center' valign='middle' bgcolor='#FFFFFF'>$room</td>
+										<td height='35' align='center' valign='middle' bgcolor='#FFFFFF'><a href='#'>删除</a>|<a href='#'>修改</a></td>
+									</tr>";
+									}
+									?>
+
+								</table>
 									
 									
 									
