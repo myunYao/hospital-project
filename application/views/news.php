@@ -12,6 +12,7 @@
 <body>
 <div class="container">
 	<div class="row" id="top">
+<!--        登录注册-->
 		<div class="col-md-2 col-md-offset-10">
 			<span><a href="<?php echo site_url('Login')?>">登录 |</a></span>
 			<span><a href="<?php echo site_url('Register')?>">注册</a></span>
