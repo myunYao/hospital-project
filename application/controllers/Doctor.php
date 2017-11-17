@@ -53,12 +53,15 @@ class Doctor extends CI_Controller
     function deleteDoc()
     {
         $where = array(
-            "name" => $_POST["name"],
-            "position" => $_POST["position"],
-            "room" => $_POST["room"]
+            "dc_id"=>$_POST["dc_id"]
         );
-        echo '需要权限';
-//        $this->DBModel->delete($where);
+//        echo '需要权限';
+        $res = $this->DBModel->delete($where);
+        if ($res) {
+            echo '成功';
+        } else {
+            echo '失败，检查插入语句：' . $this->DBModel->db->last_query();
+        }
     }
 
     function updateDoc()
