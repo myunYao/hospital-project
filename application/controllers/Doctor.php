@@ -18,19 +18,15 @@ class Doctor extends CI_Controller
 
     function index()
     {
-        $info = array(
-            "name" => '赵二麻',
-            "sex" => '男',
-            "position" => '神经外科主任助理',
-            "subject" => '骨科',
-            "skill" => '擅长搞好医患关系，处理主任内务',
-            "room" => '201'
-        );
-//        $this->DBModel->insert($info);
         echo '这是默认方法,你应该在后面加上路由';
     }
 
-    /*添加医生，必要字段列举如下，其余见数据表*/
+    /* ajax请求，不返回页面
+     * 插入医生信息，必须传入的字段有：
+     * name sex position subject skill room
+     * 可选字段有：
+     * introduction experience head
+     */
     function insertDoc()
     {
         $info = array(
@@ -41,52 +37,71 @@ class Doctor extends CI_Controller
             "skill" => $_POST["skill"],
             "room" => $_POST["room"]
         );
+        array_key_exists("introduction", $_POST) ? $info["introduction"] = $_POST["introduction"] : null;
+        array_key_exists("experience", $_POST) ? $info["experience"] = $_POST["experience"] : null;
+        array_key_exists("head", $_POST) ? $info["head"] = $_POST["head"] : null;
         $res = $this->DBModel->insert($info);
         if ($res) {
             echo '成功添加医生';
         } else {
-            echo '添加医生失败';
+            echo '添加医生失败,检查语句:' . $this->DBModel->db->last_query();
         }
     }
 
-    /*删除信息，字段如下*/
+    /* ajax请求，不返回页面
+     * 删除医生信息，唯一字段有：
+     * dc_id
+     */
     function deleteDoc()
     {
         $where = array(
-            "dc_id"=>$_POST["dc_id"]
+            "dc_id" => $_POST["dc_id"]
         );
-//        echo '需要权限';
         $res = $this->DBModel->delete($where);
         if ($res) {
             echo '成功';
         } else {
-            echo '失败，检查插入语句：' . $this->DBModel->db->last_query();
+            echo '删除失败，检查插入语句：' . $this->DBModel->db->last_query();
         }
     }
 
+    /* ajax请求，不返回页面
+     * 修改医生信息，必须传入的字段有：
+     * dc_id
+     * 可选字段(请勿添加不存在的字段)有：
+     * name sex position subject skill room introduction experience head
+     */
     function updateDoc()
     {
         $info = $_POST;
         $where = array(
-            "name" => $_POST["name"],
-            "position" => $_POST["position"],
-            "room" => $_POST["room"]
+            "dc_id" => $_POST["dc_id"]
         );
         $res = $this->DBModel->update($info, $where);
         if ($res) {
             echo '成功修改医生信息';
         } else {
-            echo '修改失败';
+            echo '修改失败，检查插入语句：' . $this->DBModel->db->last_query();
         }
     }
-
+    /* ajax请求，返回json数组，包含了相应的医生对象
+     * 默认查找全部信息
+     * 可选字段有：
+     * subject name sex position room
+     */
     function getDoc()
     {
-        $where = array(
-            'name' => $_POST['name']
-        );
-        $res = $this->DBModel->get();
-//        echo 'cb(' . json_encode($res) . ')';
-        var_dump($res);
+        $where = array();
+        array_key_exists("subject", $_POST) ? $info["subject"] = $_POST["subject"] : null;
+        array_key_exists("name", $_POST) ? $info["name"] = $_POST["name"] : null;
+        array_key_exists("sex", $_POST) ? $info["sex"] = $_POST["sex"] : null;
+        array_key_exists("position", $_POST) ? $info["position"] = $_POST["position"] : null;
+        array_key_exists("room", $_POST) ? $info["room"] = $_POST["room"] : null;
+        if (count($where)){
+            $res = $this->DBModel->get($where);
+        }else{
+            $res = $this->DBModel->get();
+        }
+        echo json_encode($res);
     }
 }
