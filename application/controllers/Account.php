@@ -19,7 +19,7 @@ class Account extends CI_Controller
     function index()
     {
         echo '这是一个接口，数据访问请添加路由';
-//        $this->load->view('success');
+//        $this->load->view('success');///
     }
 
     /* ajax请求，不返回页面
