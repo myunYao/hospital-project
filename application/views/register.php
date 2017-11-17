@@ -21,9 +21,9 @@
     <form action="" method="post">
         <DIV class="logo">医院挂号系统</DIV>
         <div class="reg_box">
-            <input class="admin" type="type"  name="nickname" id="nikename" value=""  placeholder="请输入昵称">
-            <input class="admin" type="text" name="account"  id="account" value="" placeholder="请用手机号码注册" />
-            </br></br><input class="passWord" type="password" id="passwd" name="password" value=""></br></br>
+            <input class="admin" type="type"  name="nickname" id="nickname" value=""  placeholder="请输入昵称"></br></br>
+            <input class="admin" type="text" name="account"  id="account" value="" placeholder="请用手机号码注册" /></br></br>
+            <input class="passWord" type="password" id="passwd" name="password" value=""></br></br>
             <input class="passWord" type="password"  name="password" id="s_passwd" value=""></br></br>
 
             </br></br>
@@ -35,6 +35,8 @@
 <div id="copyright">技术支持：四川省人民医院挂号管理系统</div>
 <script>
     var regUrl= "<?php echo  site_url("Account/insertAcc")?>"
+    var swiftUrl= '<?php echo site_url("Swiftest")?>'
+    var indexUrl= '<?php echo site_url("Index")?>'
 </script>
 <script src="<?php echo  base_url()?>js/register.js"></script>
 <!--</div>-->
