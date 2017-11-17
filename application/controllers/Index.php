@@ -12,6 +12,8 @@ class Index extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
+        $this->load->library('session');//引入session，
+        //设置使用$this->session->set_userdata(),取出使用$this->session->userdata['字符串']
     }
     function index(){
         $this->load->view('index');
