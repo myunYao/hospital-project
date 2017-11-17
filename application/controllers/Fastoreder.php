@@ -21,6 +21,10 @@ class Fastoreder extends CI_Controller
         echo '这是默认方法';
         $this->load->view('success');
     }
+    /* ajax请求，不返回页面
+     * 插入预约信息，必须传入的字段有：
+     * orderdate(2017-11-17) ordertime(15:59:59) subject
+     */
     function insert(){
         $info = array(
             'account_id' =>$_SESSION['account_id'],
@@ -29,40 +33,55 @@ class Fastoreder extends CI_Controller
             'subject'=>$_POST['subject']
         );
         $res = $this->DBModel->insert($info);
-        if($res){
-            echo '成功添加';
-        }else{
-            echo '失败';
+        if ($res) {
+            echo '成功';
+        } else {
+            echo '添加预约失败,检查语句:' . $this->DBModel->db->last_query();
         }
     }
+    /* ajax请求，不返回页面
+     * 删除预约信息，必须传入的字段有：
+     * fastorder_id
+     */
     function delete(){
         $info = array(
-            'account_id' =>$_SESSION['account_id'],
-            'orderdate'=>$_POST['orderdate'],
-            'subject'=>$_POST['subject']
+            'fastorder_id' =>$_POST['fastorder_id']
         );
         $res = $this->DBModel->delete($info);
-        if ($res){
-            echo '操作成功';
-        }else{
-            echo '操作失败';
+        if ($res) {
+            echo '成功';
+        } else {
+            echo '删除预约失败,检查语句:' . $this->DBModel->db->last_query();
         }
     }
+    /* ajax请求，不返回页面
+     * 修改预约信息，必须传入的字段有：
+     * fasteorder_id
+     * 可选字段(请勿添加不存在的字段)有：
+     * orderdate(2017-11-17) ordertime(15:59:59) subject
+     */
     function update(){
-        $info = $_POST;
         $where = array(
-            'account_id' => $_SESSION['account_id'],
-            'orderdate'=>$_POST['orderdate']
+            "fastorder_id"=>$_POST["fastorder_id"]
         );
-        $res = $this->DBModel->update($info,$where);
-        if ($res){
-            echo '操作成功';
-        }else{
-            echo '操作失败';
+        $info = array();
+        array_key_exists("orderdate", $_POST) ? $info["orderdate"] = $_POST["orderdate"] : null;
+        array_key_exists("ordertime", $_POST) ? $info["ordertime"] = $_POST["ordertime"] : null;
+        array_key_exists("subject", $_POST) ? $info["dc_id"] = $_POST["subject"] : null;
+        if (count($info)){
+            $res = $this->DBModel->update($info, $where);
+            if ($res) {
+                echo '成功';
+            } else {
+                echo '修改失败,检查语句:' . $this->DBModel->db->last_query();
+            }
         }
     }
+    /* ajax请求，返回json数组，包含了相应的预约对象
+     * 默认查找全部信息
+     */
     function get(){
         $res = $this->DBModel->get();
-        var_dump($res);
+        json_encode($res);
     }
 }
