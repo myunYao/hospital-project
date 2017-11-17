@@ -40,7 +40,7 @@
     </div>
     <div class="row">
         <div CLASS="col-md-6 col-md-offset-2">
-            <form role="form" style="margin-top:40px;">
+            <form role="form" style="margin-top:20px;">
                 <div class="form-group">
                     <label for="name">选择医院</label>
                     <select class="form-control">
