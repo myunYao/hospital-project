@@ -86,7 +86,7 @@
 										<td height='35' align='center' valign='middle' bgcolor='#FFFFFF'>$skill</td>
 										<td height='35' align='center' valign='middle' bgcolor='#FFFFFF'>$experience</td>
 										<td height='35' align='center' valign='middle' bgcolor='#FFFFFF'>$room</td>
-										<td height='35' align='center' valign='middle' bgcolor='#FFFFFF'><a href='#'>删除</a>|<a href='#'>修改</a></td>
+										<td height='35' align='center' valign='middle' bgcolor='#FFFFFF'><a id='delete-office-msg' dc_id='$dc_id' href='#'>删除</a>|<a href='#'>修改</a></td>
 									</tr>";
 									}
 									?>
@@ -177,5 +177,9 @@
 			
 		
 		</div>
+		<script>
+			var officeUrl = "<?php echo site_url("Doctor/deleteDoc")?>"
+		</script>
+		<script src="<?php echo base_url()?>js/office.js"></script>
 	</body>
 </html>
