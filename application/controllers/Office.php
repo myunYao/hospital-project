@@ -14,6 +14,7 @@ class Office extends CI_Controller
         $this->load->helper('url');
         $this->load->model('DBModel');
         $this->DBModel->setTable('dc_info');
+
     }
     function index(){
         $data['res'] = $this->DBModel->get();
