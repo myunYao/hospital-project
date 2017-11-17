@@ -30,7 +30,9 @@ class Doctor extends CI_Controller
         echo '这是默认方法,你应该在后面加上路由';
     }
 
-    function insertDoc(){
+    /*添加医生，必要字段列举如下，其余见数据表*/
+    function insertDoc()
+    {
         $info = array(
             "name" => $_POST["name"],
             "sex" => $_POST["sex"],
@@ -39,31 +41,49 @@ class Doctor extends CI_Controller
             "skill" => $_POST["skill"],
             "room" => $_POST["room"]
         );
-        $this->DBModel->insert($info);
+        $res = $this->DBModel->insert($info);
+        if ($res) {
+            echo '成功添加医生';
+        } else {
+            echo '添加医生失败';
+        }
     }
-    function deleteDoc(){
+
+    /*删除信息，字段如下*/
+    function deleteDoc()
+    {
         $where = array(
             "name" => $_POST["name"],
             "position" => $_POST["position"],
             "room" => $_POST["room"]
         );
-        $this->DBModel->delete($where);
+        echo '需要权限';
+//        $this->DBModel->delete($where);
     }
-    function updateDoc(){
-        $info = array(
+
+    function updateDoc()
+    {
+        $info = $_POST;
+        $where = array(
             "name" => $_POST["name"],
-            "sex" => $_POST["sex"],
             "position" => $_POST["position"],
-            "subject" => $_POST["subject"],
-            "skill" => $_POST["skill"],
             "room" => $_POST["room"]
         );
-        $this->DBModel->update($info);
+        $res = $this->DBModel->update($info, $where);
+        if ($res) {
+            echo '成功修改医生信息';
+        } else {
+            echo '修改失败';
+        }
     }
-    function getDoc(){
-        $res = $this->DBModel->get(array('name'=>'赵二麻'));
-        echo 'cb('.json_encode($res).')';
-        $this->load->view('system',$res);
+
+    function getDoc()
+    {
+        $where = array(
+            'name' => $_POST['name']
+        );
+        $res = $this->DBModel->get();
+//        echo 'cb(' . json_encode($res) . ')';
         var_dump($res);
     }
 }

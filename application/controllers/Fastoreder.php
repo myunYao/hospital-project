@@ -11,6 +11,7 @@ class Fastoreder extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        $this->load->helper('url');
         $this->load->model('DBModel');
         $this->DBModel->setTable('fastorders');
     }
@@ -20,40 +21,48 @@ class Fastoreder extends CI_Controller
         echo '这是默认方法';
         $this->load->view('success');
     }
-    function insertDoc(){
+    function insert(){
         $info = array(
-            "name" => $_POST["name"],
-            "sex" => $_POST["sex"],
-            "position" => $_POST["position"],
-            "subject" => $_POST["subject"],
-            "skill" => $_POST["skill"],
-            "room" => $_POST["room"]
+            'account_id' =>$_SESSION['account_id'],
+            'orderdate'=>date("Y-m-d"),
+            'ordertime'=>date("h:i:s"),
+            'subject'=>$_POST['subject']
         );
-        $this->DBModel->insert($info);
+        $res = $this->DBModel->insert($info);
+        if($res){
+            echo '成功添加';
+        }else{
+            echo '失败';
+        }
     }
-    function deleteDoc(){
+    function delete(){
         $info = array(
-            "name" => $_POST["name"],
-            "sex" => $_POST["sex"],
-            "position" => $_POST["position"],
-            "subject" => $_POST["subject"],
-            "skill" => $_POST["skill"],
-            "room" => $_POST["room"]
+            'account_id' =>$_SESSION['account_id'],
+            'orderdate'=>$_POST['orderdate'],
+            'subject'=>$_POST['subject']
         );
-        $this->DBModel->delete($info);
+        $res = $this->DBModel->delete($info);
+        if ($res){
+            echo '操作成功';
+        }else{
+            echo '操作失败';
+        }
     }
-    function updateDoc(){
-        $info = array(
-            "name" => $_POST["name"],
-            "sex" => $_POST["sex"],
-            "position" => $_POST["position"],
-            "subject" => $_POST["subject"],
-            "skill" => $_POST["skill"],
-            "room" => $_POST["room"]
+    function update(){
+        $info = $_POST;
+        $where = array(
+            'account_id' => $_SESSION['account_id'],
+            'orderdate'=>$_POST['orderdate']
         );
-        $this->DBModel->update($info);
+        $res = $this->DBModel->update($info,$where);
+        if ($res){
+            echo '操作成功';
+        }else{
+            echo '操作失败';
+        }
     }
-    function getDoc(){
-        $this->DBModel->get();
+    function get(){
+        $res = $this->DBModel->get();
+        var_dump($res);
     }
 }
