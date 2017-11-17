@@ -14,14 +14,10 @@ $('#delete-office-msg').click(function(){
         success:function (data) {
             console.log(data)
             /* body... */
-            if(data.result == 'ok'){
-
                 alert('删除成功！');
                 window.location.reload();  //刷新当前页面
 
-            }else{
-                alert('删除失败！');
-            }
+
         }
     });
 })
