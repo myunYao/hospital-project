@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-10 col-md-offset-1" style="top:20px;font-size: 20px;">
+        <div class="col-md-10 col-md-offset-1" style="margin-top:30px;font-size: 20px;">
             <!--<a href="<?php /*echo site_url("Index")*/?>">返回首页</a>-->
             <nav class="navbar navbar-default" role="navigation">
                 <div class="container-fluid">
@@ -41,6 +41,17 @@
     <div class="row">
         <div CLASS="col-md-6 col-md-offset-2">
             <form role="form" style="margin-top:40px;">
+                <div class="form-group">
+                    <label for="name">选择医院</label>
+                    <select class="form-control">
+                        <option>外科</option>
+                        <option>儿科</option>
+                        <option>骨科</option>
+                        <option>妇产科</option>
+                        <option>皮肤科</option>
+                        <option>心里医学科</option>
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="name">选择科室</label>
                     <select class="form-control">
@@ -81,7 +92,7 @@
                         <input type="radio" name="optionsRadiosinline" id="optionsRadios4"  value="option2"> 女
                     </label>
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="padding-top:-20px;">
                     <input type="button" name="" id="" value="提交" class="btn btn-primary" style="width:120px;margin-top: 40px;">
                 </div>
             </form>

@@ -19,7 +19,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-10 col-md-offset-1" style="padding-top:20px;font-size: 20px;">
+		<div class="col-md-10 col-md-offset-1" style="padding-top:30px;font-size: 20px;">
 			<!--<a href="<?php /*echo site_url("Index")*/?>">返回首页</a>-->
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="container-fluid">

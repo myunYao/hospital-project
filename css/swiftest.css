@@ -14,13 +14,15 @@ a{
 #top{
     padding-top: 20px;
     font-size: 16px;
+    background:-webkit-linear-gradient(top,#125646,#2E6061);
+    padding-bottom: 30px;
 }
 #top span a:hover{
     text-decoration: none;
 }
 .container{
 background: white;
-    height:100%;
+    height:auto;
 }
 #footer{
     color:white;
