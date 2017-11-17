@@ -14,66 +14,88 @@ class Account extends CI_Controller
         $this->load->helper('url');
         $this->load->model('DBModel');
         $this->DBModel->setTable('account');
-
     }
 
     function index()
     {
-        echo '这是默认方法';
-        $this->load->view('success');
+        echo '这是一个接口，数据访问请添加路由';
+//        $this->load->view('success');
     }
 
+    /* ajax请求，不返回页面
+     * 插入账号数据，必须传入的字段有：
+     * account password contact nickname
+     * 可选字段有：
+     * head degree
+     */
     function insertAcc()
     {
-        $res = $this->DBModel->insert($_POST);
+        $info = array(
+            "account" => $_POST["account"],
+            "password" => md5($_POST["password"]),
+            "contact" => $_POST["contact"],
+            "nickname" => $_POST["nickname"],
+        );
+        array_key_exists("degree", $_POST)?$info["degree"] = $_POST["degree"]:null;
+        array_key_exists("head", $_POST)?$info["head"] = $_POST["head"]:null;
+
+        $res = $this->DBModel->insert($info);
         if ($res) {
             echo '成功';
         } else {
-            echo '失败';
+            echo '失败，检查插入语句：' . $this->DBModel->db->last_query();
         }
     }
-}
 
-function deleteDoc()
-{
-    $info = array(
-        "name" => $_POST["name"],
-        "sex" => $_POST["sex"],
-        "position" => $_POST["position"],
-        "subject" => $_POST["subject"],
-        "skill" => $_POST["skill"],
-        "room" => $_POST["room"]
-    );
-    $this->DBModel->delete($info);
-}
+    /* ajax请求，不返回页面
+     * 删除账号数据，唯一传入的字段有：
+     * account
+     * 尽量不要使用此操作
+     */
+    function deleteAcc()
+    {
+        $where = array(
+            "account" => $_POST["account"],
+        );
+        $this->DBModel->delete($where);
+    }
 
-function updateDoc()
-{
-    $info = array(
-        "name" => $_POST["name"],
-        "sex" => $_POST["sex"],
-        "position" => $_POST["position"],
-        "subject" => $_POST["subject"],
-        "skill" => $_POST["skill"],
-        "room" => $_POST["room"]
-    );
-    $this->DBModel->update($info);
-}
+    /* ajax请求，不返回页面
+     * 修改账号数据，必须传入的字段有：
+     * account password
+     * 可选字段(至少传一个,不然此操作毫无意义)：
+     * contact head nickname
+     */
+    function updateDoc()
+    {
+        $where = array(
+            "account" => $_POST["account"],
+            "password" => md5($_POST["password"])
+        );
+        $info = array();
+        array_key_exists("contact", $_POST)?$info["contact"] = $_POST["contact"]:null;
+        array_key_exists("head", $_POST)?$info["head"] = $_POST["head"]:null;
+        array_key_exists("nickname", $_POST)?$info["nickname"] = $_POST["nickname"]:null;
+        $this->DBModel->update($where,$info);
+    }
+    /* ajax请求，返回json数组，包含了相应的账号对象
+     * 验证账号密码数据，必须传入的字段有：
+     * account password
+     * 可选字段无
+     */
+    function getAcc()
+    {
+        $where = array(
+            "account" => $_POST['account'],
+            "password" => md5($_POST['password']),
+        );
 
-function getAcc()
-{
-    $where = array(
-        "account" => $_POST['account'],
-        "password" => md5($_POST['password']),
-    );
-
-    $res = $this->DBModel->get($where);
-    echo $this->DBModel->db->last_query();
-    var_dump($res[0]["degree"]);
-    if (!count($res)) {
-        echo '没有找到数据';
-        return;
-    } else {
-        echo json_encode($res);
+        $res = $this->DBModel->get($where);
+//        echo $this->DBModel->db->last_query();
+        if (!count($res)) {
+            echo '查找到0个用户';
+        } else {
+            echo json_encode($res);
+        }
     }
 }
