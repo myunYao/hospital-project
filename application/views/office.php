@@ -117,7 +117,7 @@
 							<div class="content_left">
 								<div class="left_ul">
 									<ul>
-										<li><a class="btn_01" href="#">添加</a></li>
+										<li><a class="btn_01" href="<?php echo site_url('Addmsg')?>">添加</a></li>
 										<li><a class="btn_02" href="#">修改</a></li>
 										<li><a class="btn_03" href="#">删除</a></li>
 									</ul>
