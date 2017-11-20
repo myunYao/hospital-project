@@ -12,8 +12,18 @@ class Swiftest extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
+        $this->load->library('session');
     }
     function index(){
+        if (array_key_exists("account_id",$_GET) &&
+            array_key_exists("pwd",$_GET)){
+            $sess = array(
+                "account_id"=>$_GET["account_id"],
+                "pwd" => $_GET["pwd"],
+                "nickname" => $_GET["nickname"]
+            );
+            $this->session->set_userdata($sess);
+        }
         $this->load->view('swiftest');
     }
 
