@@ -40,7 +40,7 @@
                     <ul id='ul_admin'>
                         <li><a href=\"#\">个人资料</a></li>
                         <li><a href=\"#\">我的信息</a></li>
-                        <li><a href=\"#\">安全退出</a></li>
+                        <li><a href='".site_url("index")."'>安全退出</a></li>
                     </ul>";
             }
             ?>

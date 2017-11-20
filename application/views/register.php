@@ -37,6 +37,7 @@
     var regUrl= "<?php echo  site_url("Account/insertAcc")?>"
     var swiftUrl= '<?php echo site_url("Swiftest")?>'
     var indexUrl= '<?php echo site_url("Index")?>'
+    var loginUrl= '<?php echo site_url("Login")?>'
 </script>
 <script src="<?php echo  base_url()?>js/register.js"></script>
 <!--</div>-->

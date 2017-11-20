@@ -62,13 +62,13 @@ class Orders extends CI_Controller
     function update()
     {
         $where = array(
-            "order_id"=>$_POST["order_id"]
+            "order_id" => $_POST["order_id"]
         );
         $info = array();
         array_key_exists("orderdate", $_POST) ? $info["orderdate"] = $_POST["orderdate"] : null;
         array_key_exists("ordertime", $_POST) ? $info["ordertime"] = $_POST["ordertime"] : null;
         array_key_exists("dc_id", $_POST) ? $info["dc_id"] = $_POST["dc_id"] : null;
-        if (count($info)){
+        if (count($info)) {
             $res = $this->DBModel->update($info, $where);
             if ($res) {
                 echo '成功';
@@ -83,7 +83,9 @@ class Orders extends CI_Controller
      */
     function get()
     {
-        $res = $this->DBModel->get();
+        $where = array();
+        array_key_exists("account_id", $_GET) ? $where["account_id"] = $_GET["account_id"] : null;
+        $res = $this->DBModel->get($where);
         json_encode($res);
     }
 }
