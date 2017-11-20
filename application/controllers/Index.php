@@ -26,8 +26,12 @@ class Index extends CI_Controller
                 "pwd" => $res[0]["password"]
             );
             $this->session->set_userdata($sess);
-        } else {
+        }else if (array_key_exists("exit", $_GET)) {
             $this->session->set_userdata(array("nickname" => "游客"));
+        } else {
+            if (!array_key_exists("nickname",$this->session->all_userdata())){
+                $this->session->set_userdata(array("nickname" => "游客"));
+            }
         }
 
 //        $this->session->set_userdata();
