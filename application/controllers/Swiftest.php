@@ -22,7 +22,6 @@ class Swiftest extends CI_Controller
                 "pwd" => $_GET["pwd"],
                 "nickname" => $_GET["nickname"]
             );
-
             $this->session->set_userdata($sess);
         }
         $this->load->view('swiftest');
