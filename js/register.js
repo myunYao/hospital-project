@@ -57,7 +57,7 @@ $(function(){
                     window.location.href=swiftUrl;
                 }
                 else{
-                   // window.location.href=indexUrl;
+                    window.location.href=indexUrl;
                 }
             }
         })
