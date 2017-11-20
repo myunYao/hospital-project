@@ -19,12 +19,15 @@ $(document).ready(function(){
             data: {name:name,sex:sex,introduction:introduction,position:position,subject:subject,skill:skill,experience:experience,room:room},
             success:function (data) {
                 /* body... */
-                console.log(data);
+                //console.log(data);
 
-                    //alert('操作成功！');
-                   /* window.location.href = tiaozhuanUrl;*/
+                    alert('添加成功！');
+                    window.location.href = tiaozhuanUrl;
 
             }
         });
     });
+    $("#cancl").click(function(){
+        window.location.href = refreshUrl;
+    })
 })
