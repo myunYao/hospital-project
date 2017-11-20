@@ -46,59 +46,61 @@
             </nav>
         </div>
     </div>
-    <!--    获取信息-->
-<!--    --><?php
-//    $dc_info="http://192.168.4.103/hospital-project/index.php/Doctor/getDoc ";
-//    foreach($dc_info as $key=>$value) {
-//        $dc_id = $value['dc_id'];
-//        $name = $value['name'];
-//        $sex = $value['sex'];
-//        $introduction = $value['introduction'];
-//        $position = $value['position'];
-//        $subject = $value['subject'];
-//        $skill = $value['skill'];
-//        $experience = $value['experience'];
-//        $room = $value['room'];
-//        echo "$dc_id";
-//    };
-//    ?>
 
     <!--    科室列表-->
     <div class="row">
         <div class="col-md-offset-1 kslist" >
           <p>选择科室：
-              <span class="active"><a href="">全部</a></span>
-              <span><a href="">眼科</a></span>
-              <span><a href="">眼科</a></span>
-              <span><a href="">眼科</a></span>
+              <span class="active"><a href="<?php echo site_url("Subscribe")?>">全部</a></span>
+              <span><a href="<?php echo site_url("Subscribe")?>">神经外科</a></span>
+              <span><a href="<?php echo site_url("Subscribe")?>">骨科</a></span>
+              <span><a href="<?php echo site_url("Subscribe")?>">眼科</a></span>
           </p>
         </div>
     </div>
-    <!--     医生列表-->
-    <div class="row do_list">
-        <div class="col-md-3  col-md-offset-1 do_cotent">
-           <div class="do_img">
-               <img src="http://img.bjguahao.gov.cn/naja/hospital/244.jpg" width="200px" height="150px">
+    <!--    获取信息-->
+    <?php
+    $imgBaseUrl = base_url()."img/";
+    foreach($res as $value) {
+        $dc_id             = $value['dc_id'];
+        $name              = $value['name'];
+        $sex               = $value['sex'];
+        $introduction      = $value['introduction'];
+        $position          = $value['position'];
+        $subject           = $value['subject'];
+        $skill             = $value['skill'];
+        $experience        = $value['experience'];
+        $head			   = $value['head'];
+        $room              = $value['room'];
+//        echo "$dc_id $name $sex $introduction $position $subject $skill $experience $head $room";
+//        echo "$head";
+//        <!--     医生列表-->
+        echo   "
+           <div class=\"row do_list\">
+        <div class=\"col-md-3  col-md-offset-1 do_cotent\">
+           <div class=\"do_img\">
+               <img src=\"$head\" width=\"200px\" height=\"150px\">
            </div>
         </div>
-            <div class="col-md-5  do_info" style="padding-top: 10px;">
+            <div class=\"col-md-5  do_info\" style=\"padding-top: 10px;\">
                 <dl>
-                    <dt>
-                    <p >XX医生
-                        <span >XX科</span>
-                    </p>
-                    </dt>
+                    <dt><p> $name <span >$subject</span></dt>
                     <dd>
-                    <p>放号时间 : 10:15</p>
-                    <p>010-64637125</p>
-                    <p>医生详情</p>
+                    <p>职务:<span>$position</span></p>
+                    <p>技能:$skill</p>
+                    <p>医生详情: $introduction </p>
+                    <p>办公室:$room</p>
                     </dd>
                 </dl>
             </div>
-            <div class="col-md-1 ">
-           <div  id="yybtn"> 预约</div>
+            <div class=\"col-md-1 \">
+           <div  id=\"yybtn\"> 预约</div>
             </div>
     </div>
+        ";
+    };
+    ?>
+
     <script>
         document.getElementById("#yydtn").onclick{
             window.location("base.url().'News'");
