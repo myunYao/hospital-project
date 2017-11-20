@@ -46,8 +46,13 @@ $(function(){
                 console.log(msg);
             },
             success: function (msg) {  //处理正确时的信息
+
                 console.log(msg);
-                if(msg["degree"]=="normol"){
+
+                if(msg == "exist"){
+                    alert("该用户已存在");
+                }
+                else if(msg["degree"]=="normol"){
                     //通过控制器跳转界面
                     window.location.href=swiftUrl;
                 }
