@@ -31,7 +31,7 @@
                             <li ><a href="<?php echo site_url("Index")?>">网站首页</a></li>
                             <li><a href="<?php echo site_url("News")?>">新闻中心</a></li>
                             <li><a href="<?php echo site_url("Swiftest")?>">快速挂号</a></li>
-                            <li><a href="<?php echo site_url("order")?>">预约医生</a></li>
+                            <li><a href="<?php echo site_url("Subscribe")?>">预约医生</a></li>
                         </ul>
                     </div>
                 </div>
