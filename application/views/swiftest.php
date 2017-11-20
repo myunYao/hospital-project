@@ -13,7 +13,14 @@
 <div class="container">
     <div class="row" id="top">
         <div class="col-md-2 col-md-offset-10">
-            <span><a href="<?php echo site_url('Login')?>"><?php echo $this->session->userdata['nickname']?> |</a></span>
+            <?php
+            if (!array_key_exists("nickname",$this->session->all_userdata()) || $this->session->userdata['nickname']=="游客"){
+                echo "<span><a href='".site_url('Login')."'>登录 |</a></span>";
+            }else{
+                echo "<span><a href='".site_url('Login')."'>".$this->session->userdata['nickname']." |</a></span>";
+            }
+            ?>
+<!--            <span><a href="--><?php //echo site_url('Login')?><!--">--><?php //echo $this->session->userdata['nickname']?><!-- |</a></span>-->
             <span><a href="<?php echo site_url('Register')?>">注册</a></span>
         </div>
     </div>
