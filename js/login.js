@@ -22,8 +22,7 @@ $(function(){
             },
             success: function (msg) {  //处理正确时的信息
                 msg = JSON.parse(msg);
-                console.log(msg.degree);
-                if(msg.degree=="normal"){
+                if(msg["degree"]=="normal"){
                     //通过控制器跳转界面
                     window.location.href=swiftUrl;
                 }
