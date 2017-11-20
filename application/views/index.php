@@ -102,7 +102,7 @@
                     <a href="<?php echo site_url('Talk') ?>">网上聊天</a>
                 </div>
                 <div class="book">
-                    <a href="#">通讯录</a>
+                    <a href="<?php  echo site_url("Person")?>">个人中心</a>
                 </div>
                 <div class="message">
                     <a href="#">短消息</a>
