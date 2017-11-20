@@ -72,7 +72,7 @@ class Account extends CI_Controller
      * 可选字段(至少传一个,不然此操作毫无意义)：
      * contact head nickname
      */
-    function updateDoc()
+    function updateAcc()
     {
         $where = array(
             "account" => $_POST["account"],
