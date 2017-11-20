@@ -27,7 +27,7 @@
             <input class="passWord" type="password"  name="password" id="s_passwd" value=""></br></br>
 
             </br></br>
-            <input class="submit" type="button"  value="注  册"/>
+            <input class="submit" type="button" id="register" value="注  册"/>
             <div class="clear"></div>
         </div>
     </form>

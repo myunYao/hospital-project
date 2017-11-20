@@ -36,14 +36,20 @@ class Account extends CI_Controller
             "contact" => $_POST["contact"],
             "nickname" => $_POST["nickname"],
         );
-        array_key_exists("degree", $_POST)?$info["degree"] = $_POST["degree"]:null;
-        array_key_exists("head", $_POST)?$info["head"] = $_POST["head"]:null;
-
-        $res = $this->DBModel->insert($info);
-        if ($res) {
-            echo '成功';
-        } else {
-            echo '失败，检查插入语句：' . $this->DBModel->db->last_query();
+        array_key_exists("degree", $_POST) ? $info["degree"] = $_POST["degree"] : null;
+        array_key_exists("head", $_POST) ? $info["head"] = $_POST["head"] : null;
+        //判断是否重复账号
+        $res = $this->DBModel->get(array("account" => $_POST["account"],));
+        if ($res){
+            //重复名则返回这个
+            echo 'exist';
+        }else{
+            $res = $this->DBModel->insert($info);
+            if ($res) {
+                echo 'success';
+            } else {
+                echo '失败，检查插入语句：' . $this->DBModel->db->last_query();
+            }
         }
     }
 
@@ -66,18 +72,19 @@ class Account extends CI_Controller
      * 可选字段(至少传一个,不然此操作毫无意义)：
      * contact head nickname
      */
-    function updateDoc()
+    function updateAcc()
     {
         $where = array(
             "account" => $_POST["account"],
             "password" => md5($_POST["password"])
         );
         $info = array();
-        array_key_exists("contact", $_POST)?$info["contact"] = $_POST["contact"]:null;
-        array_key_exists("head", $_POST)?$info["head"] = $_POST["head"]:null;
-        array_key_exists("nickname", $_POST)?$info["nickname"] = $_POST["nickname"]:null;
-        $this->DBModel->update($where,$info);
+        array_key_exists("contact", $_POST) ? $info["contact"] = $_POST["contact"] : null;
+        array_key_exists("head", $_POST) ? $info["head"] = $_POST["head"] : null;
+        array_key_exists("nickname", $_POST) ? $info["nickname"] = $_POST["nickname"] : null;
+        $this->DBModel->update($where, $info);
     }
+
     /* ajax请求，返回json数组，包含了相应的账号对象
      * 验证账号密码数据，必须传入的字段有：
      * account password
