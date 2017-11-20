@@ -29,7 +29,7 @@
 			<div class="top">
 				<div class="logo">医院挂号系统</div>
 				<div class="admin" id="admin">
-					<a href="#">admin</a>
+					<a href="#"><?php echo $this->session->userdata['nickname'];?></a>
 					<ul id="ul_admin">
 						<li><a href="#">个人资料</a></li>
 						<li><a href="#">我的信息</a></li>
