@@ -21,13 +21,14 @@ $(function(){
                 console.log(msg);
             },
             success: function (msg) {  //处理正确时的信息
-                console.log(msg);
-                if(msg["degree"]=="normol"){
+                msg = JSON.parse(msg);
+                console.log(msg.degree);
+                if(msg.degree=="normal"){
                     //通过控制器跳转界面
                     window.location.href=swiftUrl;
                 }
                 else{
-                    window.location.href=indexUrl;
+                    alert("账号或密码错误！");
                 }
             }
         })

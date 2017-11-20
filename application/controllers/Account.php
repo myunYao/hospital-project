@@ -42,11 +42,11 @@ class Account extends CI_Controller
         $res = $this->DBModel->get(array("account" => $_POST["account"],));
         if ($res){
             //重复名则返回这个
-            echo 'exist';
+            echo json_encode(array("res"=>'exist'));
         }else{
             $res = $this->DBModel->insert($info);
             if ($res) {
-                echo 'success';
+                echo json_encode(array("res"=>'success'));
             } else {
                 echo '失败，检查插入语句：' . $this->DBModel->db->last_query();
             }
@@ -85,7 +85,7 @@ class Account extends CI_Controller
         $this->DBModel->update($where, $info);
     }
 
-    /* ajax请求，返回json数组，包含了相应的账号对象
+    /* ajax请求，返回json对象，包含了相应的账号对象
      * 验证账号密码数据，必须传入的字段有：
      * account password
      * 可选字段无
@@ -96,13 +96,12 @@ class Account extends CI_Controller
             "account" => $_POST['account'],
             "password" => md5($_POST['password']),
         );
-
         $res = $this->DBModel->get($where);
 //        echo $this->DBModel->db->last_query();
         if (!count($res)) {
-            echo '查找到0个用户';
+            echo json_encode(array("res"=>"查找到0个用户"));
         } else {
-            echo json_encode($res);
+            echo json_encode($res[0]);
         }
     }
 }
