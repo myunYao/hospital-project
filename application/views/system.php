@@ -27,7 +27,6 @@
 <!--								列表信息-->
 								<tr>
 								  <td align="center" valign="middle" bgcolor="#d1d1d1" >ID</td>
-						     	  <td align="center" valign="middle" bgcolor="#d1d1d1" >编号</td>
 						     	  <td align="center" valign="middle" bgcolor="#d1d1d1">医生名字</td>
 						     	  <td align="center" valign="middle" bgcolor="#d1d1d1">性别</td>
 						     	  <td align="center" valign="middle" bgcolor="#d1d1d1">医生介绍</td>
@@ -40,7 +39,6 @@
 						  		</tr>
 <!--								需要获取的列表信息-->
 								<?php
-								$imgBaseUrl = base_url()."img/";
 								foreach($res as $value){
 									$dc_id	 				=    	$value['dc_id'];
 									$name	 				=    	$value['name'];
@@ -50,9 +48,9 @@
 									$subject				=		$value['subject'];
 									$skill					=		$value['skill'];
 									$experience				=		$value['experience'];
-									$head					=		$imgBaseUrl.$value['head'];
+									$head					=		$value['head'];
 									$room					=		$value['room'];
-								echo "<tr><td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$dc_id</td><td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>&nbsp;</td><td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$name</td><td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$sex</td><td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$introduction</td><td height='35' align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$position</td><td height='35' align='center' valign='middle' bgcolor='#FFFFFF'>$subject</td><td height='35' align='center' valign='middle' bgcolor='#FFFFFF'>$skill</td><td height='35' align='center' valign='middle' bgcolor='#FFFFFF'>$experience</td><td height='35' align='center' valign='middle' bgcolor='#FFFFFF'><img src='$head' alt=''></td><td height='35' align='center' valign='middle' bgcolor='#FFFFFF'>$room</td></tr>";
+								echo "<tr><td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$dc_id</td><td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$name</td><td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$sex</td><td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$introduction</td><td height='35' align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$position</td><td height='35' align='center' valign='middle' bgcolor='#FFFFFF'>$subject</td><td height='35' align='center' valign='middle' bgcolor='#FFFFFF'>$skill</td><td height='35' align='center' valign='middle' bgcolor='#FFFFFF'>$experience</td><td height='35' align='center' valign='middle' bgcolor='#FFFFFF'><img style='width:40px;height: 20px;' src='".base_url().$head."' alt=''></td><td height='35' align='center' valign='middle' bgcolor='#FFFFFF'>$room</td></tr>";
 								}
 									?>
 							</table>
