@@ -42,7 +42,7 @@ class Account extends CI_Controller
         $res = $this->DBModel->get(array("account" => $_POST["account"],));
         if ($res){
             //重复名则返回这个
-            echo json_encode(array("error"=>'账户名已存在'));
+            echo json_encode(array("error"=>'exist'));
         }else{
             $res = $this->DBModel->insert($info);
             if ($res) {
