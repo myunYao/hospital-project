@@ -11,6 +11,9 @@ li{
 a{
     text-decoration: none;
 }
+a:hover{
+    text-decoration: none;
+}
 #top{
     padding-top: 20px;
     font-size: 16px;
@@ -37,4 +40,31 @@ background: white;
 #footer ul li a{
     color:white;
     text-decoration: none;
+}
+.news_img{
+    float:left;
+}
+.news_img img{
+    width:80px;
+    height:60px;
+}
+.news_title{
+
+    height:60px;
+}
+.news_title>p{
+   padding-left: 20px;
+}
+.news_title p a{
+    color:black;
+}
+.news_title p a:hover{
+    color:black;
+    text-decoration: none;
+}
+.news_title span:nth-of-type(1){
+    margin-left: 20px;
+}
+.news_title span:nth-of-type(2){
+padding-left: 30px;
 }

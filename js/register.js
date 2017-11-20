@@ -37,7 +37,7 @@ $(function(){
         if(!s_password){
             alert("请输入密码");
         }
-        alert(url);
+        //alert(url);
         $.ajax({
             data: {nickname:nickname,account: account,password:s_password,contact:account},       //要发送的数据
             type: "POST",           //发送的方式
@@ -54,10 +54,10 @@ $(function(){
                 }
                 else if(msg["degree"]=="normol"){
                     //通过控制器跳转界面
-                    window.location.href=swiftUrl;
+                    window.location.href=swiftUrl+"?account_id="+msg["account_id"];
                 }
                 else{
-                    window.location.href=indexUrl;
+                    window.location.href=indexUrl+"?account_id="+msg["account_id"];
                 }
             }
         })

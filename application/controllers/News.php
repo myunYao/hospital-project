@@ -12,9 +12,18 @@ class News extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
+        $this->load->model('DBModel');
+        $this->DBModel->setTable('news');
     }
     function index(){
-        $this->load->view('news');
+        $data['news'] = $this->DBModel->get();
+
+       /* if (!count($data)) {
+            echo '查找到0个新闻';
+        } else {
+            echo json_encode($data);
+        }*/
+        $this->load->view('news',$data);
     }
 
 }

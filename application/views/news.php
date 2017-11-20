@@ -40,7 +40,7 @@
 		</div>
 	</div>
 	<div class="row"  >
-		<div class="col-md-6 col-md-offset-1"  style="padding-top:30px;" >
+		<div class="col-md-10 col-md-offset-1"  style="padding-top:30px;" >
 			<div id="myCarousel" class="carousel slide">
 				<!-- 轮播（Carousel）指标 -->
 				<ol class="carousel-indicators">
@@ -70,29 +70,32 @@
 				   data-slide="next">&rsaquo;</a>
 			</div>
 		</div>
-<!--		右侧栏开始-->
-		<div class="col-md-4" style="padding-top:30px;font-size: 18px;">
-			<ul>
-				<li><a href="#"></a></li>
-				<li>aknahrvnehnjgfjnkcm</li>
-				<li>aknahrvnehnjgfjnkcm</li>
-				<li>aknahrvnehnjgfjnkcm</li>
-				<li>aknahrvnehnjgfjnkcm</li>
-				<li>aknahrvnehnjgfjnkcm</li>
-			</ul>
-		</div>
-<!--		右侧栏结束-->
+
 	</div>
 <!--	下边栏开始-->
-	<div class="row">
-		<div class="col-md-8 col-md-offset-1">
+	<div class="row" style="margin-top: 20px;">
+		<div class="col-md-10 col-md-offset-1" >
 			<ul>
-				<li>11111111111111</li>
-				<li>aknahrvnehnjgfjnkcm</li>
-				<li>aknahrvnehnjgfjnkcm</li>
-				<li>aknahrvnehnjgfjnkcm</li>
-				<li>aknahrvnehnjgfjnkcm</li>
-				<li>aknahrvnehnjgfjnkcm</li>
+				<?php
+					foreach($news as $value){
+
+						//print_r($value);
+						$title=$value["title"];
+						$author=$value["author"];
+						$pubtime=$value["pubtime"];
+						$images=$value["images"];
+						echo "<li>
+							<div class=\"news_img\">
+								<img src='".base_url().$images."' alt=''>
+							</div>
+							<div  class=\"news_title\">
+								<p><a href=\"#\">$title</a></p>
+								<span>$author</span>
+								<span>$pubtime</span>
+							</div>
+						</li>";
+					}
+				?>
 			</ul>
 		</div>
 	</div>
