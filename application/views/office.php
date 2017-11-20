@@ -107,12 +107,12 @@
 									</div>
 								</div>
 							</div>
-							
-							
-							
-							
-							
-							
+
+
+
+
+
+
 							
 							<div class="content_left">
 								<div class="left_ul">
