@@ -42,11 +42,11 @@ class Account extends CI_Controller
         $res = $this->DBModel->get(array("account" => $_POST["account"],));
         if ($res){
             //重复名则返回这个
-            echo json_encode(array("error"=>'exist'));
+            echo 'exist';
         }else{
             $res = $this->DBModel->insert($info);
             if ($res) {
-                echo json_encode(array("result"=>'成功'));
+                echo 'success';
             } else {
                 echo '失败，检查插入语句：' . $this->DBModel->db->last_query();
             }
