@@ -97,7 +97,6 @@ class Account extends CI_Controller
             "password" => md5($_POST['password']),
         );
         $res = $this->DBModel->get($where);
-//        echo $this->DBModel->db->last_query();
         if (!count($res)) {
             echo json_encode(array("res"=>"查找到0个用户"));
         } else {
