@@ -82,7 +82,8 @@
                     </ul>";
                 }
                 else if(!$value['fastorder_id']){
-                    echo "<ul class=\"fastorder\">
+                    echo "
+                        <ul class=\"fastorder\">
                             <li>您没有快速预约的信息</li>
                         </ul>";
                 }

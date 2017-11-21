@@ -13,6 +13,7 @@ class News extends CI_Controller
         parent::__construct();
         $this->load->helper('url');
         $this->load->model('DBModel');
+        $this->load->library('session');
         $this->DBModel->setTable('news');
     }
     function index(){

@@ -5,6 +5,7 @@ class Subscribe extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
+        $this->load->library('session');
         $this->load->model('DBModel');
         $this->DBModel->setTable('dc_info');
     }

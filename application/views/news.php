@@ -46,7 +46,7 @@
 		</div>
 	</div>
 	<div class="row"  >
-		<div class="col-md-10 col-md-offset-1"  style="padding-top:30px;" >
+		<div class="col-md-8 col-md-offset-2"  style="padding-top:30px;" >
 			<div id="myCarousel" class="carousel slide">
 				<!-- 轮播（Carousel）指标 -->
 				<ol class="carousel-indicators">
@@ -80,7 +80,7 @@
 	</div>
 <!--	下边栏开始-->
 	<div class="row" style="margin-top: 20px;">
-		<div class="col-md-10 col-md-offset-1" >
+		<div class="col-md-10 col-md-offset-2" >
 			<ul>
 				<?php
 					foreach($news as $value){
