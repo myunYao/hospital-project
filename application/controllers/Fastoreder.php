@@ -27,16 +27,17 @@ class Fastoreder extends CI_Controller
      * orderdate(2017-11-17) ordertime(15:59:59) subject
      */
     function insert(){
-        var_dump($_POST) ;
-        $info = array(
-            'account_id' =>$_SESSION['account_id'],
-        //    'orderdate'=>date("Y-m-d"),
-          //  'ordertime'=>date("h:i:s"),
-            'subject'=>$_POST['subject']
+       // var_dump($_POST) ;
+      $info = array(
+          'account_id' =>$_SESSION['account_id'],
+          'orderdate'=>$_POST['date'],
+          'ordertime'=>$_POST['time'],
+          'subject'=>$_POST['sub'],
         );
         $res = $this->DBModel->insert($info);
+
         if ($res) {
-            echo '成功';
+            $this->load->view("person");
         } else {
             echo '添加预约失败,检查语句:' . $this->DBModel->db->last_query();
         }
