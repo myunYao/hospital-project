@@ -12,6 +12,7 @@ class Fastoreder extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
+        $this->load->library('session');
         $this->load->model('DBModel');
         $this->DBModel->setTable('fastorders');
     }
@@ -26,10 +27,11 @@ class Fastoreder extends CI_Controller
      * orderdate(2017-11-17) ordertime(15:59:59) subject
      */
     function insert(){
+        var_dump($_POST) ;
         $info = array(
             'account_id' =>$_SESSION['account_id'],
-            'orderdate'=>date("Y-m-d"),
-            'ordertime'=>date("h:i:s"),
+        //    'orderdate'=>date("Y-m-d"),
+          //  'ordertime'=>date("h:i:s"),
             'subject'=>$_POST['subject']
         );
         $res = $this->DBModel->insert($info);

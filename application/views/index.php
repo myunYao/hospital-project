@@ -59,7 +59,7 @@
 
             <div class="secend_box">
                 <div class="weather">
-                    <a href="#">预约管理</a>
+                    <a href="<?php echo site_url("Swiftest")?>">预约管理</a>
                 </div>
                 <!--天气预报 end-->
 

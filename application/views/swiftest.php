@@ -45,48 +45,37 @@
     </div>
     <div class="row">
         <div CLASS="col-md-6 col-md-offset-2">
-            <form role="form" style="margin-top:20px;">
-                <div class="form-group">
-                    <label for="name">选择医院</label>
-                    <select class="form-control">
-                        <option>外科</option>
-                        <option>儿科</option>
-                        <option>骨科</option>
-                        <option>妇产科</option>
-                        <option>皮肤科</option>
-                        <option>心里医学科</option>
-                    </select>
-                </div>
+            <form role="form" method="post" action="<?php echo site_url("Fastoreder/insert")?>" style="margin-top:20px;">
                 <div class="form-group">
                     <label for="name">选择科室</label>
                     <select class="form-control">
-                        <option>外科</option>
-                        <option>儿科</option>
-                        <option>骨科</option>
-                        <option>妇产科</option>
-                        <option>皮肤科</option>
-                        <option>心里医学科</option>
+                        <option value="外科">外科</option>
+                        <option value="儿科">儿科</option>
+                        <option value="骨科">骨科</option>
+                        <option value="妇产科">妇产科</option>
+                        <option value="皮肤科">皮肤科</option>
+                        <option value="心理医学科">心理医学科</option>
                     </select>
                     <div style="display:none ">
                         <span>科室介绍:</span>
                     </div>
                 </div>
                 <div class="form-group" style="margin-top:20px;">
-                    <label for="firstname" class="col-sm-2 control-label">姓名</label>
+                    <label for="firstname" class="col-sm-2 control-label">预约日期</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="firstname" placeholder="请输入名字">
+                        <input type="date" class="form-control" id="firstname">
                     </div>
                 </div>
                 <div class="form-group" style="margin-top:80px;">
-                    <label for="age" class="col-sm-2 control-label">年龄</label>
+                    <label for="time" class="col-sm-2 control-label">预约时间</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="age" placeholder="请输入年龄">
+                        <input type="time" class="form-control" id="time" >
                     </div>
                 </div>
                 <div class="form-group" style="margin-top:140px;">
-                    <label for="tel" class="col-sm-2 control-label">年龄</label>
+                    <label for="tel" class="col-sm-2 control-label">电话号码</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="tel" placeholder="请输入电话号码">
+                        <input type="tel" class="form-control" id="tel" placeholder="请输入电话号码">
                     </div>
                 </div>
                 <div style="margin-top: 80px;margin-left:10px;">
@@ -98,7 +87,7 @@
                     </label>
                 </div>
                 <div class="form-group" style="padding-top:-20px;">
-                    <input type="button" name="" id="" value="提交" class="btn btn-primary" style="width:120px;margin-top: 40px;">
+                    <input type="submit" name="" id="" value="提交" class="btn btn-primary" style="width:120px;margin-top: 40px;">
                 </div>
             </form>
         </div>
