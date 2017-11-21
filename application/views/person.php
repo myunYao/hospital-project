@@ -24,84 +24,46 @@
             <span><a href="<?php echo site_url('Register')?>">注册</a></span>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1" style="padding-top:30px;font-size: 20px;">
-            <!--<a href="<?php /*echo site_url("Index")*/?>">返回首页</a>-->
+    <div class="row sliderNav">
+        <div class="col-md-2  col-md-offset-1" >
             <nav class="navbar navbar-default" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="#">挂号系统</a>
+                        <!--<button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target="#example-navbar-collapse">
+                            <span class="sr-only">切换导航</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>-->
+                        <a class="navbar-brand" href="<?php echo site_url("Index")?>">返回首页</a>
                     </div>
-                    <div>
-                        <ul class="nav nav-pills nav-justified">
-                            <li ><a href="<?php echo site_url("Index")?>">网站首页</a></li>
-                            <li><a href="<?php echo site_url("News")?>">新闻中心</a></li>
-                            <li><a href="<?php echo site_url("Swiftest")?>">快速挂号</a></li>
-                            <li><a href="<?php echo site_url("Subscribe")?>">预约医生</a></li>
-
+                    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active" id="persons"><a href="#">个人信息</a></li>
+                            <li  id="orders"><a href="#">预约信息</a></li>
+                            <li  id="updataPerson"><a href="#">修改个人信息</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
-
         </div>
-    </div>
 
-    <div class="row person" >
-        <div class="col-md-6 col-md-offset-2">
+        <div class="col-md-8 "  id="orderNews">
             <h3>我的预约信息</h3>
-            <table width="95%" border="0" cellpadding="0" cellspacing="1" bgcolor="#999999">
-                <!--								列表信息-->
-                <tr>
-                    <td align="center" valign="middle" bgcolor="#d1d1d1" >预约时间</td>
-                    <td align="center" valign="middle" bgcolor="#d1d1d1" >预约医院</td>
-                    <td align="center" valign="middle" bgcolor="#d1d1d1" >医生名字</td>
-                    <td align="center" valign="middle" bgcolor="#d1d1d1" >医生介绍</td>
+            <ul id="fastorder">
+                <li>预约类型:快速预约</li>
+                <li><span>预约医生:</span><span></span></li>
+                <li><span>预约时间:</span><span></span></li>
+            </ul>
 
-
-                </tr>
-                <tr>
-
-                    <td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$dc_id</td>
-                    <td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$dc_id</td>
-                    <td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$dc_id</td>
-                    <td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$dc_id</td>
-
-                </tr>
-                <tr>
-
-                    <td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$dc_id</td>
-                    <td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$dc_id</td>
-                    <td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$dc_id</td>
-                    <td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$dc_id</td>
-
-                </tr>
-                <tr>
-
-                    <td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$dc_id</td>
-                    <td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$dc_id</td>
-                    <td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$dc_id</td>
-                    <td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$dc_id</td>
-
-                </tr>
-
-                <?php
-/*                foreach($res as $value){
-
-                    echo "<tr>
-
-                        <td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$dc_id</td>
-                        <td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$dc_id</td>
-                        <td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$dc_id</td>
-                        <td align='center' valign='middle' bgcolor='#FFFFFF' class='Pleft'>$dc_id</td>
-
-                        </tr>";
-                }
-                */?>
-            </table>
+            <ul id="orderDc" style="display:none">
+                <li>预约类型:预约医生</li>
+                <li><span>预约时间:</span><span></span></li>
+                <li><span>预约医生:</span><span></span></li>
+            </ul>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-8" id="personNews">
             <h3>我的个人信息</h3>
             <ul>
                 <li><img src="" alt="个人头像"></li>
@@ -110,10 +72,13 @@
             </ul>
 
         </div>
+
     </div>
+
+
     <!--footer start	-->
     <div class="row" id="footer">
-        <div class="col-md-10 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
             <ul >
                 <li> <a href="/Item/2503.aspx" title="版权声明">版权声明</a> | </li>
                 <li><a href="/Item/2504.aspx" title="法律责任">法律责任</a> |</li>
@@ -124,7 +89,7 @@
                 <li><a href="/Item/11942.aspx" title="网站地图">网站地图</a></li>
             </ul>
         </div>
-        <div class="col-md-10 col-md-offset-2" style=" margin-top: 20px;padding-bottom: 8px;">
+        <div class="col-md-10 col-md-offset-1" style=" margin-top: 20px;padding-bottom: 8px;">
             <div id="CopyRight">
                 <p>地址：（东院）北京市东城区帅府园一号，100730；（西院）北京市西城区大木仓胡同41号，100032</p>
                 <p>医院电话：69156114<a href="http://www.miibeian.gov.cn"  title="京ICP 备05067313号-1" target="_blank">京ICP 备05067313号-1</a>文保网安备案号：1101010023 京卫网审字【2014】第39号 </p>
@@ -134,5 +99,6 @@
     </div>
     <!--footer end	-->
 </div>
+<script src="<?php echo base_url()?>js/person.js"></script>
 </body>
 </html>
