@@ -47,8 +47,8 @@
         <div CLASS="col-md-6 col-md-offset-2">
             <form role="form" method="post" action="<?php echo site_url("Fastoreder/insert")?>" style="margin-top:20px;">
                 <div class="form-group">
-                    <label for="name">选择科室</label>
-                    <select class="form-control">
+                    <label for="sub">选择科室</label>
+                    <select  name="sub" class="form-control" id="sub">
                         <option value="外科">外科</option>
                         <option value="儿科">儿科</option>
                         <option value="骨科">骨科</option>
@@ -61,33 +61,33 @@
                     </div>
                 </div>
                 <div class="form-group" style="margin-top:20px;">
-                    <label for="firstname" class="col-sm-2 control-label">预约日期</label>
+                    <label for="date" class="col-sm-2 control-label">预约日期</label>
                     <div class="col-sm-10">
-                        <input type="date" class="form-control" id="firstname">
+                        <input type="date" class="form-control" id="date" name="date">
                     </div>
                 </div>
                 <div class="form-group" style="margin-top:80px;">
                     <label for="time" class="col-sm-2 control-label">预约时间</label>
                     <div class="col-sm-10">
-                        <input type="time" class="form-control" id="time" >
+                        <input type="time" name="time" class="form-control" id="time" >
                     </div>
                 </div>
                 <div class="form-group" style="margin-top:140px;">
                     <label for="tel" class="col-sm-2 control-label">电话号码</label>
                     <div class="col-sm-10">
-                        <input type="tel" class="form-control" id="tel" placeholder="请输入电话号码">
+                        <input type="tel"  name="tel" class="form-control" id="tel" placeholder="请输入电话号码">
                     </div>
                 </div>
                 <div style="margin-top: 80px;margin-left:10px;">
                     <label class="radio-inline">
-                        <input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option1" checked> 男
+                        <input type="radio" name="sex" value="男" checked> 男
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="optionsRadiosinline" id="optionsRadios4"  value="option2"> 女
+                        <input type="radio" name="sex"  value="女"> 女
                     </label>
                 </div>
                 <div class="form-group" style="padding-top:-20px;">
-                    <input type="submit" name="" id="" value="提交" class="btn btn-primary" style="width:120px;margin-top: 40px;">
+                    <input type="submit" name="submit"  value="提交" class="btn btn-primary" style="width:120px;margin-top: 40px;">
                 </div>
             </form>
         </div>
