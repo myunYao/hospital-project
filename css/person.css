@@ -10,15 +10,33 @@ html,body{
 
 }
 #personNews{
-
-    display:none;
     border:4px solid #0a8c84;
     border-radius: 10px;
     margin-top:30px;
     margin-left:30px;
     margin-bottom: 50px;
+    height:360px;
 
    /* background: ;*/
+
+}
+#personNews ul li{
+    font-size: 20px;
+}
+#personNews ul li:nth-of-type(1){
+    margin-top: 20px;
+}
+#personNews ul li:nth-of-type(2){
+    margin-top: 20px;
+    margin-left: -40px;
+}
+#personNews ul li:nth-of-type(3){
+    margin-top: 20px;
+}
+#personNews ul li img{
+   width:120px;
+    height:120px;
+    margin-top: 20px;
 
 }
 #orderNews{
@@ -27,15 +45,35 @@ html,body{
     margin-top:30px;
     margin-left:30px;
     margin-bottom: 50px;
-    height:360px;
+    display:none ;
     /*background: ;*/
 }
-#fastorder{
+#orderNews ul li:nth-of-type(1){
+    margin-top: 20px;
+}
+#orderNews ul li:nth-of-type(2){
+    margin-top: 20px;
+}
+#orderNews ul li:nth-of-type(3){
+    margin-top: 20px;
+}
+.fastorder{
     margin-top: 30px;
     font-size: 20px;
     margin-bottom: 30px;
 
+
 }
-#fastorder ul li{
+.fastorder ul li:nth-of-type(3){
     margin:20px;
+    border-bottom:2px solid #000000;
+}
+.orderDc{
+    margin-top: 30px;
+    font-size: 20px;
+    margin-bottom: 30px;
+    display:none;
+}
+.orderDc ul {
+    border:2px solid #000000;
 }

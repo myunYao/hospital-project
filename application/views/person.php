@@ -19,7 +19,13 @@
     <div class="row" id="top">
         <!--        登录注册-->
         <div class="col-md-2 col-md-offset-10">
-            <span><a href="<?php echo site_url('Login')?>">登录</a></span>
+            <?php
+            if (!array_key_exists("nickname",$this->session->all_userdata()) || $this->session->userdata['nickname']=="游客"){
+                echo "<span><a href='".site_url('Login')."'>登录 |</a></span>";
+            }else{
+                echo "<span><a href='".site_url('Person')."'>".$this->session->userdata['nickname']." |</a></span>";
+            }
+            ?>
             <span> | </span>
             <span><a href="<?php echo site_url('Register')?>">注册</a></span>
         </div>
@@ -41,7 +47,16 @@
                     <div class="collapse navbar-collapse" id="example-navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li class="active" id="persons"><a href="#">个人信息</a></li>
-                            <li  id="orders"><a href="#">预约信息</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    预约信息<b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li id="fastorder"><a href="#">快速预约</a></li>
+                                    <li id="orderDc"><a href="#">预约医生</a></li>
+
+                                </ul>
+                            </li>
                             <li  id="updataPerson"><a href="#">修改个人信息</a></li>
                         </ul>
                     </div>
@@ -51,25 +66,56 @@
 
         <div class="col-md-8 "  id="orderNews">
             <h3>我的预约信息</h3>
-            <ul id="fastorder">
-                <li>预约类型:快速预约</li>
-                <li><span>预约医生:</span><span></span></li>
-                <li><span>预约时间:</span><span></span></li>
-            </ul>
+            <?php
+            foreach($res as $value){
+                if($value["order_id"]) {
+                    $dc_name = $value ["name"];
+                    $order_time = $value ["ordertime"];
+                    $order_date = $value ["orderdate"];
+                    //echo $dc_name;
+                    echo "
+                    <ul class=\"orderDc\">
+                    <li>预约类型:预约医生</li>
+                    <li><span>预约日期:</span><span>$order_date  </span></li>
+                    <li><span>具体时间:</span><span>$order_time  </span></li>
+                    <li><span>预约医生:</span><span> $dc_name  </span></li>
+                    </ul>";
+                }
+                else if(!$value['fastorder_id']){
+                    echo "<ul class=\"fastorder\">
+                            <li>您没有快速预约的信息</li>
+                        </ul>";
+                }
+                else{
+                    echo "
+                        <ul class=\"fastorder\">
+                            <li>预约类型:快速预约</li>
+                            <li><span>预约医生:</span><span></span></li>
+                            <li><span>预约日期:</span><span></span></li>
+                            <li><span>具体时间:</span><span></span></li>
+                        </ul>";
+                }
+            }
+            ?>
 
-            <ul id="orderDc" style="display:none">
-                <li>预约类型:预约医生</li>
-                <li><span>预约时间:</span><span></span></li>
-                <li><span>预约医生:</span><span></span></li>
-            </ul>
+
+
         </div>
         <div class="col-md-8" id="personNews">
             <h3>我的个人信息</h3>
-            <ul>
-                <li><img src="" alt="个人头像"></li>
-                <li><span>昵&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp称:</span><span>我是病人</span></li>
-                <li><span>电话号码:</span><span>2017-12-26</span></li>
-            </ul>
+            <?php
+            foreach($res as $value){
+                $account=$value["account"];
+                $nickname=$value["nickname"];
+            }
+            echo "
+             <ul>
+                <li><img src=\"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=319120560,14449975&fm=27&gp=0.jpg\" alt=\"个人头像\"></li>
+                <li><span>昵&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp称:</span><span>$nickname</span></li>
+                <li><span>电话号码:</span><span>$account</span></li>
+            </ul>";
+
+            ?>
 
         </div>
 

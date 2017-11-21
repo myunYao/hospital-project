@@ -20,7 +20,6 @@
                 echo "<span><a href='".site_url('Person')."'>".$this->session->userdata['nickname']." |</a></span>";
             }
             ?>
-<!--            <span><a href="--><?php //echo site_url('Login')?><!--">--><?php //echo $this->session->userdata['nickname']?><!-- |</a></span>-->
             <span><a href="<?php echo site_url('Register')?>">注册</a></span>
         </div>
     </div>

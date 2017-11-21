@@ -1,9 +1,23 @@
 
 $(function(){
-    $('#orders').click(function(){
+    $('#fastorder').click(function(){
         $("#orderNews").css({"display":"block"});
         $("#personNews").css({"display":"none"});
-        $('#orders').attr({"class":"active"});
+        $(".orderDc").css({"display":"none"});
+        $(".fastorder").css({"display":"block "});
+
+        $('#fastorder').attr({"class":"active"});
+        $('#persons').attr({"class":""});
+
+
+    })
+    $('#orderDc').click(function(){
+        $("#orderNews").css({"display":"block"});
+        $("#personNews").css({"display":"none"});
+        $(".orderDc").css({"display":"block"});
+        $(".fastorder").css({"display":"none "});
+
+        $('#fastorder').attr({"class":"active"});
         $('#persons').attr({"class":""});
 
 
@@ -12,7 +26,7 @@ $(function(){
         $("#personNews").css({"display":"block"});
         $("#orderNews").css({"display":"none"});
         $('#persons').attr({"class":"active"});
-        $('#orders').attr({"class":""});
+        $('#fastorder').attr({"class":""});
 
     })
 
