@@ -80,20 +80,32 @@
                     <li><span>具体时间:</span><span>$order_time  </span></li>
                     <li><span>预约医生:</span><span> $dc_name  </span></li>
                     </ul>";
+                }else{
+                    echo "
+                        <ul class=\"fastorder\">
+                            <li>您没有预约医生的信息</li>
+                        </ul>";
                 }
-                else if(!$value['fastorder_id']){
+
+            }
+            foreach($res1 as $value){
+                if(!$value['fastorder_id']){
                     echo "
                         <ul class=\"fastorder\">
                             <li>您没有快速预约的信息</li>
                         </ul>";
                 }
                 else{
+                    $date = $value["orderdate"];
+                    $sub  = $value["subject"];
+                    $time = $value["ordertime"];
+
                     echo "
                         <ul class=\"fastorder\">
                             <li>预约类型:快速预约</li>
-                            <li><span>预约医生:</span><span></span></li>
-                            <li><span>预约日期:</span><span></span></li>
-                            <li><span>具体时间:</span><span></span></li>
+                            <li><span>预约科室:</span><span>$sub</span></li>
+                            <li><span>预约日期:</span><span>$date</span></li>
+                            <li><span>具体时间:</span><span>$time</span></li>
                         </ul>";
                 }
             }
