@@ -12,6 +12,7 @@ class Orders extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
+        $this->load->library('session');//引入session，
         $this->load->model('DBModel');
         $this->DBModel->setTable('orders');
     }
@@ -24,13 +25,17 @@ class Orders extends CI_Controller
     {
         $info = array(
             'account_id' => $_SESSION['account_id'],
-            'orderdate' => $_POST["orderdate"],
-            'ordertime' => $_POST["ordertime"],
+            'orderdate' => $_POST["date"],
+            'ordertime' => $_POST["time"],
             'dc_id' => $_POST['dc_id']
         );
         $res = $this->DBModel->insert($info);
         if ($res) {
-            echo '成功';
+            echo '<script>alert("添加成功")</script>';
+            $data['res'] = $this->DBModel->db
+                ->query("SELECT * FROM `account`, `orders`, `dc_info` WHERE `account`.`account_id` = `orders`.`account_id` AND `dc_info`.`dc_id` = `orders`.`dc_id` AND `account`.`account_id`=".$this->session->userdata["account_id"])
+                ->result_array();
+            $this->load->view('person',$data);
         } else {
             echo '添加预约失败,检查语句:' . $this->DBModel->db->last_query();
         }
