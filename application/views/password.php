@@ -49,7 +49,7 @@
 
     <div id="left_nav" class="left_menu">
         <div class="back">
-            <a href="#"></a>
+            <a href="<?php echo site_url("Index")?>"></a>
         </div>
         <div class="menu_list">
             <ul>

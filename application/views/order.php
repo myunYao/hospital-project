@@ -1,26 +1,17 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>新闻中心</title>
+    <title>预约医生</title>
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="<?php echo base_url()?>css/swiftest.css" type="text/css">
-    <style>
-     .kslist {padding-left: 15px;}
-     .kslist>a{ color:black}
-        .do_list{padding:5px; border-bottom: 1px solid #f3f3f3}
-        .do_cotent{}
-        #yybtn{corsur:pointer;width:80px;height30px;background-color:#EBAC2A;font-size: 20px ;line-height:30px;color:white;margin-top: 80px;text-align: center}
-        .do_info{padding-top: 10px;}
-    </style>
 </head>
 <body>
 <div class="container">
     <div class="row" id="top">
-        <!--        登录注册-->
         <div class="col-md-2 col-md-offset-10">
             <?php
             if (!array_key_exists("nickname",$this->session->all_userdata()) || $this->session->userdata['nickname']=="游客"){
@@ -33,7 +24,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-10 col-md-offset-1" style="padding-top:30px;font-size: 20px;">
+        <div class="col-md-10 col-md-offset-1" style="margin-top:30px;font-size: 20px;">
             <!--<a href="<?php /*echo site_url("Index")*/?>">返回首页</a>-->
             <nav class="navbar navbar-default" role="navigation">
                 <div class="container-fluid">
@@ -52,63 +43,36 @@
             </nav>
         </div>
     </div>
-
-    <!--    科室列表-->
     <div class="row">
-        <div class="col-md-offset-1 kslist" >
-          <p>选择科室：
-              <span class="active"><a href="<?php echo site_url("Subscribe")?>">全部</a></span>
-              <span><a href="<?php echo site_url("Subscribe")?>">神经外科</a></span>
-              <span><a href="<?php echo site_url("Subscribe")?>">骨科</a></span>
-              <span><a href="<?php echo site_url("Subscribe")?>">眼科</a></span>
-          </p>
+        <div CLASS="col-md-6 col-md-offset-2">
+            <form role="form" method="post" action="<?php echo site_url("Orders/insert")?>" style="margin-top:20px;">
+                <input type="hidden" name="dc_id" value="<?=$_GET["dc_id"]?>">
+                <div class="form-group" margin-top="30px">
+                    <label for="dcname" class="col-sm-2 control-label" >医生姓名</label>
+                    <div class="col-sm-10">
+                        <input type="text"  name="dcname"  disabled="disabled" class="form-control" id="dcname" value="<?php echo $res[0]["name"]?>">
+                    </div>
+                </div>
+                <div class="form-group"   margin-top="30px">
+                    <label for="date" class="col-sm-2 control-label">预约日期</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" id="date" name="date">
+                    </div>
+                </div>
+                <div class="form-group"  margin-top="30px">
+                    <label for="time" class="col-sm-2 control-label">预约时间</label>
+                    <div class="col-sm-10">
+                        <input type="time" name="time" class="form-control" id="time" >
+                    </div>
+                </div>
+
+                <div class="form-group" >
+                    <input type="submit" name="submit"  value="提交" class="btn btn-primary" style="width:120px; margin-top: 30px;">
+                </div>
+            </form>
         </div>
     </div>
-    <!--    获取信息-->
-    <?php
-    $imgBaseUrl = base_url()."img/";
-    foreach($res as $value) {
-        $dc_id             = $value['dc_id'];
-        $name              = $value['name'];
-        $sex               = $value['sex'];
-        $introduction      = $value['introduction'];
-        $position          = $value['position'];
-        $subject           = $value['subject'];
-        $skill             = $value['skill'];
-        $experience        = $value['experience'];
-        $head			   = $value['head'];
-        $room              = $value['room'];
-//        echo "$dc_id $name $sex $introduction $position $subject $skill $experience $head $room";
-//        echo "$head";
-//        <!--     医生列表-->
-        echo   "
-           <div class=\"row do_list\">
-        <div class=\"col-md-3  col-md-offset-1 do_cotent\">
-           <div class=\"do_img\">
-               <img src=\"$head\" width=\"200px\" height=\"150px\">
-           </div>
-        </div>
-            <div class=\"col-md-5  do_info\" style=\"padding-top: 10px;\">
-                <dl>
-                    <dt><p> $name <span >$subject</span></dt>
-                    <dd>
-                    <p>职务:<span>$position</span></p>
-                    <p>技能:$skill</p>
-                    <p>医生详情: $introduction </p>
-                    <p>办公室:$room</p>
-                    </dd>
-                </dl>
-            </div>
-            <div class=\"col-md-1 \">
-           <div  id=\"yybtn\" dc_id='$dc_id' class='OD'>
-            <a href='".site_url("Order")."?dc_id=".$dc_id."'>预约</a> </div>
-            </div>
-    </div>
-        ";
-    };
-    ?>
-    <!--footer start	-->
-    <div class="row" id="footer">
+    <div  id="footer" class="row" >
         <div class="col-md-10 col-md-offset-2">
             <ul >
                 <li> <a href="/Item/2503.aspx" title="版权声明">版权声明</a> | </li>
@@ -128,8 +92,7 @@
 
         </div>
     </div>
-    <!--footer end	-->
 </div>
-
+</div>
 </body>
-</html> */
+</html>

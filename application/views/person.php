@@ -120,13 +120,19 @@
             foreach($res as $value){
                 $account=$value["account"];
                 $nickname=$value["nickname"];
+
             }
-            echo "
-             <ul>
+            if($nickname && $account){
+                echo "
+                 <ul>
                 <li><img src=\"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=319120560,14449975&fm=27&gp=0.jpg\" alt=\"个人头像\"></li>
                 <li><span>昵&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp称:</span><span>$nickname</span></li>
                 <li><span>电话号码:</span><span>$account</span></li>
-            </ul>";
+                </ul>";
+
+            }
+
+
 
             ?>
 
