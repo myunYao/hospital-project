@@ -16,7 +16,7 @@
 				<div class="right_box">
 					<div class="right_topBar">
 						<ul>
-							<li><a href="#">您目前的位置：个人管理 >修改信息</a></li>
+							<li><a href="#">您目前的位置：个人管理 >添加信息</a></li>
 						</ul>
 					</div>
 					
@@ -51,16 +51,17 @@
 			
 			<div id="left_nav" class="left_menu">
 				<div class="back">
-					<a href="#"></a>
+					<a href="<?php echo site_url("Office")?>"></a>
 				</div>
 				<div class="menu_list">
 					<ul>
-						<li><a href="#">部门管理</a></li>
-						<li><a href="#">人员管理</a></li>
-						<li><a href="#">权限管理</a></li>
-						<li><a href="#">密码管理</a></li>
-						<li><a href="#">岗位管理</a></li>
-						<li><a href="#">报表参数</a></li>						
+						<li><a href="<?php echo site_url("Office")?>">个人办公</a></li>
+						<li><a href="<?php echo site_url("System")?>">医生信息</a></li>
+<!--						<li><a href="#">人员管理</a></li>-->
+<!--						<li><a href="#">权限管理</a></li>-->
+<!--						<li><a href="#">密码管理</a></li>-->
+<!--						<li><a href="#">岗位管理</a></li>-->
+<!--						<li><a href="#">报表参数</a></li>						-->
 					</ul>
 				</div>
 			</div>
