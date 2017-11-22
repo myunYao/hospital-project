@@ -32,7 +32,7 @@ class NewsC extends CI_Controller
     {
         $info = array(
             "title" => $_POST["title"],
-            "detail" => md5($_POST["detail"])
+            "detail" => $_POST["detail"]
         );
         array_key_exists("author", $_POST) ? $info["author"] = $_POST["author"] : null;
         array_key_exists("pubtime", $_POST) ? $info["pubtime"] = $_POST["pubtime"] : null;
@@ -45,7 +45,8 @@ class NewsC extends CI_Controller
         }else{
             $res = $this->DBModel->insert($info);
             if ($res) {
-                echo 'success';
+                echo '<script>alert("添加成功")</script>';
+                $this->load->view('Password');
             } else {
                 echo '失败，检查插入语句：' . $this->DBModel->db->last_query();
             }
