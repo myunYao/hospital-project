@@ -90,18 +90,19 @@
 						$author=$value["author"];
 						$pubtime=$value["pubtime"];
 						$images=$value["images"];
-						echo "<li>
-							<div class=\"news_img\">
-								<img src='".base_url().$images."' alt=''>
-							</div>
-							<div  class=\"news_title\">
-								<p><a href=\"#\">$title</a></p>
-								<span>$author</span>
-								<span>$pubtime</span>
-							</div>
-						</li>";
+						echo "<div style='position: relative; border: 1px solid #ccc;width: 760px; height:100px;margin-bottom: 5px;margin-left: -40px'>
+								<div style='position: absolute;top: 20px;left: 10px' class=\"news_img\">
+									<img src='".base_url().$images."' alt=''>
+								</div>
+								<div style='position: absolute;top: 20px;left: 90px'  class=\"news_title\">
+									<p><span>标题：</span><a href=\"#\">$title</a></p>
+									<span style='font-weight:bold;'><span>姓名：</span>$author</span>
+									<span>时间：$pubtime</span>
+								</div>
+						</div>";
 					}
 				?>
+
 			</ul>
 		</div>
 	</div>
