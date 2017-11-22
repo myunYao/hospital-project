@@ -118,8 +118,8 @@
 								<div class="left_ul">
 									<ul>
 										<li><a class="btn_01" href="<?php echo site_url('Addmsg')?>">添加</a></li>
-										<li><a class="btn_02" href="#">修改</a></li>
-										<li><a class="btn_03" href="#">删除</a></li>
+										<li><a class="btn_02" href="<?php echo site_url("Office")?>">修改</a></li>
+										<li><a class="btn_03" href="<?php echo site_url("Office")?>">删除</a></li>
 									</ul>
 								</div>
 								<div class="st_tree">
@@ -161,16 +161,16 @@
 			
 			<div id="left_nav" class="left_menu">
 				<div class="back">
-					<a href="#"></a>
+					<a href="<?php echo site_url("Index")?>"></a>
 				</div>
 				<div class="menu_list">
 					<ul>
-						<li><a href="#">短消息</a></li>
-						<li><a href="#">文件传递</a></li>
-						<li><a href="#">个人文件夹</a></li>
-						<li><a href="#">电子邮件</a></li>
-						<li><a href="#">通讯录</a></li>
-						<li><a href="#">待办事宜</a></li>						
+						<li><a href="<?php echo site_url("System")?>">医生信息</a></li>
+<!--						<li><a href="#">文件传递</a></li>-->
+<!--						<li><a href="#">个人文件夹</a></li>-->
+<!--						<li><a href="#">电子邮件</a></li>-->
+<!--						<li><a href="#">通讯录</a></li>-->
+<!--						<li><a href="#">待办事宜</a></li>						-->
 					</ul>
 				</div>
 			</div>
