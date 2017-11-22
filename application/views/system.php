@@ -16,8 +16,8 @@
 				<Div class="right_box">
 					<div class="right_topBar">
 						<ul>
-							<li><a href="#">添加人员</a></li>
-							<li><a href="#">删除人员</a></li>
+							<li><a href="<?php echo site_url("Addmsg")?>">添加人员</a></li>
+							<li><a href="<?php echo site_url("Office")?>">删除人员</a></li>
 						</ul>
 					</div>
 					
@@ -76,16 +76,16 @@
 			
 			<div id="left_nav" class="left_menu">
 				<div class="back">
-					<a href="#"></a>
+					<a href="<?php echo site_url("Index")?>"></a>
 				</div>
 				<div class="menu_list">
 					<ul>
-						<li><a href="#">部门管理</a></li>
-						<li><a href="#">人员管理</a></li>
-						<li><a href="#">权限管理</a></li>
-						<li><a href="#">密码管理</a></li>
-						<li><a href="#">岗位管理</a></li>
-						<li><a href="#">报表参数</a></li>						
+						<li><a href="<?php echo site_url("Office")?>">个人办公</a></li>
+<!--						<li><a href="#">人员管理</a></li>-->
+<!--						<li><a href="#">权限管理</a></li>-->
+<!--						<li><a href="#">密码管理</a></li>-->
+<!--						<li><a href="#">岗位管理</a></li>-->
+<!--						<li><a href="#">报表参数</a></li>						-->
 					</ul>
 				</div>
 			</div>
