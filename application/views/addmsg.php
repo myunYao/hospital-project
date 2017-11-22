@@ -57,6 +57,7 @@
 					<ul>
 						<li><a href="<?php echo site_url("Office")?>">个人办公</a></li>
 						<li><a href="<?php echo site_url("System")?>">医生信息</a></li>
+                        <li><a href="<?php echo site_url("Password")?>">新闻添加</a></li>
 <!--						<li><a href="#">人员管理</a></li>-->
 <!--						<li><a href="#">权限管理</a></li>-->
 <!--						<li><a href="#">密码管理</a></li>-->
