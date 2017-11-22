@@ -39,7 +39,7 @@
                 echo "<a href='javascript:;'>" . $this->session->userdata['nickname'] . "</a>
                     <ul id='ul_admin'>
                         <li><a href=\"#\">个人资料</a></li>
-                        <li><a href=\"#\">我的信息</a></li>
+                        <li><a href='".site_url("Person")."'>我的信息</a></li>
                         <li><a href='".site_url("index?exit=1")."'>安全退出</a></li>
                     </ul>";
             }
@@ -104,9 +104,9 @@
                 <div class="book">
                     <a href="<?php  echo site_url("Person")?>">个人中心</a>
                 </div>
-                <div class="message">
-                    <a href="#">短消息</a>
-                </div>
+<!--                <div class="message">-->
+<!--                    <a href="#">短消息</a>-->
+<!--                </div>-->
                 <div class="office">
                     <a href="<?php echo site_url('Office') ?>">个人办公</a>
                 </div>
@@ -117,9 +117,9 @@
                 <div class="attendance">
                     <a href="#">考勤管理</a>
                 </div>
-                <div class="official ">
-                    <a href="#">公文管理</a>
-                </div>
+<!--                <div class="official ">-->
+<!--                    <a href="#">公文管理</a>-->
+<!--                </div>-->
                 <div class="table">
                     <a href="<?php echo site_url('System') ?>">医生信息</a>
                 </div>
