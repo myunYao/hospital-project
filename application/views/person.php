@@ -107,6 +107,7 @@
                             <li><span>预约日期:</span><span>$date</span></li>
                             <li><span>具体时间:</span><span>$time</span></li>
                         </ul>";
+                    break;
                 }
             }
             ?>
@@ -117,19 +118,28 @@
         <div class="col-md-8" id="personNews">
             <h3>我的个人信息</h3>
             <?php
-            foreach($res as $value){
-                $account=$value["account"];
-                $nickname=$value["nickname"];
+            foreach($user as $value) {
+                $account = $value["account"];
+                $nickname = $value["nickname"];
 
-            }
-            if($nickname && $account){
-                echo "
+
+                if ($nickname && $account) {
+                    echo "
                  <ul>
                 <li><img src=\"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=319120560,14449975&fm=27&gp=0.jpg\" alt=\"个人头像\"></li>
                 <li><span>昵&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp称:</span><span>$nickname</span></li>
                 <li><span>电话号码:</span><span>$account</span></li>
                 </ul>";
 
+                } else {
+                    echo "
+                 <ul>
+                <li><img src=\"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=319120560,14449975&fm=27&gp=0.jpg\" alt=\"个人头像\"></li>
+                <li><span>昵&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp称:</span><span>游客</span></li>
+                <li><span>电话号码:</span><span>无</span></li>
+                </ul>";
+
+                }
             }
 
 

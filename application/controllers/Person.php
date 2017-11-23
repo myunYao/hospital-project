@@ -23,7 +23,10 @@ class Person extends CI_Controller
             ->query("SELECT * FROM `account`, `orders`, `dc_info` WHERE `account`.`account_id` = `orders`.`account_id` AND `dc_info`.`dc_id` = `orders`.`dc_id` AND `account`.`account_id`=".$this->session->userdata["account_id"])
             ->result_array();
         $data['res1']=$this->DBModel->db
-            ->query("SELECT * FROM `account`, `fastorders`, `dc_info` WHERE `account`.`account_id` = `fastorders`.`account_id` AND  `account`.`account_id`=".$this->session->userdata["account_id"])
+            ->query("SELECT fastorders.subject,fastorders.fastorder_id,account.account,dc_info.name,fastorders.orderdate,fastorders.ordertime FROM `account`, `fastorders`, `dc_info` WHERE `account`.`account_id` = `fastorders`.`account_id` AND  `account`.`account_id`=".$this->session->userdata["account_id"]." GROUP BY `name`")
+            ->result_array();
+        $data['user'] = $this->DBModel->db
+            ->query("SELECT * FROM `account` WHERE `account`.`account_id`=".$this->session->userdata['account_id'])
             ->result_array();
         $this->load->view('person',$data);
 
